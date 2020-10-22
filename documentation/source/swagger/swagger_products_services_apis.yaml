@@ -1823,7 +1823,7 @@ components:
                               type: string
                               maxLength: 50
                               description: Denominação/Identificação do nome da conta (cartão de crédito)
-                              example: Cartão Univertário
+                              example: Cartão Universitário
                             identification:
                               $ref: '#/components/schemas/CreditCardIndentification'
                             rewardsProgram:
@@ -1939,7 +1939,7 @@ components:
           type: string
           maxLength: 30
           description: Sigla de identificação do Serviço relacionado à Modalidade de Contas de Pagamento Pós-Pagas para pessoa jurídica informada (Campo Livre)
-          example: ANUIDADENacional
+          example: ANUIDADE_NACIONAL
         chargingTriggerInfo:
           type: string
           maxLength: 2000
