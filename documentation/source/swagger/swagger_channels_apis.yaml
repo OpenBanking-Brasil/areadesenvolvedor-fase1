@@ -1039,6 +1039,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PhoneChannel'
+          minItems: 1
+          maxItems: 4
           description: Lista  de canais de atendimento telefônico
       allOf:
         - $ref: '#/components/schemas/CNPJ'
