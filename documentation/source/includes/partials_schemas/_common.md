@@ -193,9 +193,9 @@
 | Nome              | Tipo                                   | Obrigatório | Descrição                                         |
 |:------------      |:------------------                     |:----------  |:------------------------------------------------- |
 | standards         | Array                                  | Sim         | Lista com os dias da semana.                      |
-| weekday           | [[Enum WeekDay](#schemaWeekDay)]       | Sim         | Dia da semana.                                    |
-| openingTime       | [[TimeString](#commonFieldTimeString)] | Sim         | Horário padrão de início de atendimento.          |
-| closingTime       | [[TimeString](#commonFieldTimeString)] | Sim         | Horário padrão de encerramento de atendimento.    |
+| weekday           | [[Enum WeekDay](#schemaWeekDay)]       | Não         | Dia da semana.                                    |
+| openingTime       | [[TimeString](#commonFieldTimeString)] | Não         | Horário padrão de início de atendimento.          |
+| closingTime       | [[TimeString](#commonFieldTimeString)] | Não         | Horário padrão de encerramento de atendimento.    |
 | exception         | string                                 | Não         | Informações sobre as exceções de abertura.        |
 | allowPublicAccess | string                                 | Sim         | Define se possui acesso ao público. True ou False.|
 
