@@ -974,6 +974,12 @@
                     <a href="#faq-limites-de-trafego-de-requisicoes-no-momento-o-compartilhamento-dos-dados-relativos-aos-terminais-de-autoatendimento-compartilhados-e-facultativo" class="toc-h2 toc-link" data-title="No momento, o compartilhamento dos dados relativos aos Terminais de autoatendimento compartilhados é facultativo?">No momento, o compartilhamento dos dados relativos aos Terminais de autoatendimento compartilhados é facultativo?</a>
                   </li>
                   <li>
+                    <a href="#faq-limites-de-trafego-de-requisicoes-de-que-tipo-de-terminal-o-regulador-esta-se-referindo-pois-temos-algumas-situacoes-distintas-em-nossa-instituicao" class="toc-h2 toc-link" data-title="De que tipo de terminal o regulador está se referindo, pois temos algumas situações distintas em nossa instituição:">De que tipo de terminal o regulador está se referindo, pois temos algumas situações distintas em nossa instituição:</a>
+                  </li>
+                  <li>
+                    <a href="#faq-limites-de-trafego-de-requisicoes-na-normativa-n-35-do-bcb-para-correspondente-bancario-os-atributos-weekday-e-phonestype-aparecem-como-opcional-mas-no-github-aparecem-como-obrigatorios-isto-esta-correto" class="toc-h2 toc-link" data-title="Na normativa nº 35, do BCB, para Correspondente Bancário os atributos weekday e phonestype aparecem como opcional, mas no Github aparecem como obrigatórios isto está correto?">Na normativa nº 35, do BCB, para Correspondente Bancário os atributos weekday e phonestype aparecem como opcional, mas no Github aparecem como obrigatórios isto está correto?</a>
+                  </li>
+                  <li>
                     <a href="#faq-limites-de-trafego-de-requisicoes-sendo-consideradas-somente-as-operacoes-contratadas-no-mes-da-apuracao-no-calculo-e-disponibilizacao-de-informacoes-relativas-a-distribuicao-de-frequencia-de-taxas-remuneratorias" class="toc-h2 toc-link" data-title="Sendo consideradas somente as operações “contratadas” no mês da apuração no cálculo e disponibilização de informações relativas a distribuição de frequência de Taxas remuneratórias.">Sendo consideradas somente as operações “contratadas” no mês da apuração no cálculo e disponibilização de informações relativas a distribuição de frequência de Taxas remuneratórias.</a>
                   </li>
                   <li>
@@ -1166,7 +1172,7 @@ prazos definidos para lançamento e implementação de novas versões <em>major<
 </tr>
 <tr>
 <td style="text-align: left"><strong>x-v</strong></td>
-<td style="text-align: left">Cabeçalho que indica a versão implementada da API pela instituição financeira</td>
+<td style="text-align: left">Cabeçalho que indica a versão implementada da API pela instituição financeira. Deve ser preenchido com um número positivo, exemplo: <code>x-v : 2</code></td>
 <td style="text-align: left">Sim</td>
 </tr>
 <tr>
@@ -1825,7 +1831,7 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 <p>Como descrito na seção <a href="#introducao-versionamento">versionamento</a>, o versionamento existe apenas no nível das APIs e não no nível dos <em>endpoints</em>, no entanto caso seja necessário realizar versionamento de um <em>endpoint</em> customizado, o participante poderá utilizar o <em>header</em> <code>x-&lt;PID&gt;-v</code> para que o consumidor possa especificar qual versão do <em>endpoint</em> está requisitando.</p>
 <h1 id='glossario'>Glossário</h1>
 <p><h2 id='padroes-glossario'>Glossário</h2><h3 id='padroes-glossario-agencia-branch'><a id="glossarioAgencia">Agência (Branch)</a></h3>
-<p>É a dependência destinada ao atendimento aos clientes e ao público em geral no exercício de atividades da instituição, não podendo ser móvel ou transitória.</p>
+<p>É a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória</p>
 <h3 id='padroes-glossario-adiantamento-a-depositante-unarranged-account-overdraft'><a id="glossarioAdiantamentoDepositante">Adiantamento a Depositante (Unarranged Account Overdraft)</a></h3>
 <p>O valor que o banco libera na conta-corrente do cliente, em casos excepcionais, o valor necessário para cobrir algum saque, pagamento, débito automático ou cheque, quando o saldo disponível não é suficiente.</p>
 <h3 id='padroes-glossario-bandeira-credit-card-network'><a id="glossarioBandeira">Bandeira (Credit Card Network)</a></h3>
@@ -3901,7 +3907,7 @@ A informação de quais possibilidades estarão disponíveis (<em>query paramete
 </tr>
 </thead><tbody>
 <tr>
-<td>2</td>
+<td>3</td>
 </tr>
 </tbody></table>
 
@@ -10208,7 +10214,7 @@ Caso haja mais de 1 evento por cliente, referente ao mesmo produto e/ou serviç
 <tr>
 <td style="text-align: left">type</td>
 <td style="text-align: left">AGENCIA</td>
-<td style="text-align: left">Agência é a dependência destinada ao atendimento aos clientes e ao público em geral no exercício de atividades da instituição, não podendo ser móvel ou transitória.</td>
+<td style="text-align: left">Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória.</td>
 </tr>
 <tr>
 <td style="text-align: left">type</td>
@@ -24834,6 +24840,16 @@ Espera-se que o detentor dos dados garanta que a medição do tempo de resposta 
 <h3 id='faq-limites-de-trafego-de-requisicoes-no-momento-o-compartilhamento-dos-dados-relativos-aos-terminais-de-autoatendimento-compartilhados-e-facultativo'>No momento, o compartilhamento dos dados relativos aos Terminais de autoatendimento compartilhados é facultativo?</h3>
 <p>A normativa nº 35 explicita a existência da API de Terminais de autoatendimento compartilhado, por isso o Github traz esta estrutura.
 Num primeiro momento, foi declarado através da normativa nº 35 que todos seus atributos são opcionais.</p>
+<h3 id='faq-limites-de-trafego-de-requisicoes-de-que-tipo-de-terminal-o-regulador-esta-se-referindo-pois-temos-algumas-situacoes-distintas-em-nossa-instituicao'>De que tipo de terminal o regulador está se referindo, pois temos algumas situações distintas em nossa instituição:</h3>
+<p><strong>1. Terminais de nossa propriedade cujo demais bancos firmam convênio para que seus clientes os utilizem;</strong> </p>
+
+<p><strong>2. Terminais de terceiros como Saque e Pague e Banco 24h, que possuímos convênio para uso de nossos clientes.</strong> </p>
+
+<p><strong>Para o segundo caso, se for esse o foco do pedido do regulador, não teremos os dados de forma atualizada para informar via API, uma vez que tal informação estará disponível no proprietário do terminal, como por exemplo a TecBan? Se precisarmos informar tais dados, não teremos como nos responsabilizar pela veracidade e integridade do mesmo.</strong> </p>
+
+<p>O item 2.4.2, sobre terminais de autoatendimento compartilhados, do ANEXO À INSTRUÇÃO NORMATIVA BCB Nº 35, de 2020, , refere-se exatamente aos terminais de propriedade de terceiros, a exemplo do Saque e Pague e Banco 24h citados, contratados pelas instituições para a prestação de serviços a seus clientes. No que diz respeito à veracidade e à integridade dos dados fornecidos, trata-se de responsabilidade da instituição participante, conforme dispõe o art. 31 da Resolução Conjunta n.º 1, de 2020.</p>
+<h3 id='faq-limites-de-trafego-de-requisicoes-na-normativa-n-35-do-bcb-para-correspondente-bancario-os-atributos-weekday-e-phonestype-aparecem-como-opcional-mas-no-github-aparecem-como-obrigatorios-isto-esta-correto'>Na normativa nº 35, do BCB, para Correspondente Bancário os atributos weekday e phonestype aparecem como opcional, mas no Github aparecem como obrigatórios isto está correto?</h3>
+<p>O atributo <code>weekday</code> faz parte da lista <code>availability</code>, assim como <code>phonestype</code> faz parte da lista <code>phones</code>. As listas estão classificadas como opcionais, portanto caso a Instituição não tenha valores para informar em <code>availability</code> ou em <code>phones</code> estas listas como um todo estão classificadas opcionais não aparecerão na resposta solicitada. Porém, caso haja conteúdo a ser informado na lista <code>availability</code> ou <code>phones</code> o preenchimento dos atributos do tipo Enum: <code>weekday</code> ou <code>phonestype</code> passam a ser obrigatórios. Por isso estão assim classificados, seguindo protocolos das melhores práticas.</p>
 <h3 id='faq-limites-de-trafego-de-requisicoes-sendo-consideradas-somente-as-operacoes-contratadas-no-mes-da-apuracao-no-calculo-e-disponibilizacao-de-informacoes-relativas-a-distribuicao-de-frequencia-de-taxas-remuneratorias'>Sendo consideradas somente as operações “contratadas” no mês da apuração no cálculo e disponibilização de informações relativas a distribuição de frequência de Taxas remuneratórias.</h3>
 <ul>
 <li><p>Modalidades de crédito disponíveis para oferta que não tiveram nenhuma contratação no mês da apuração serão informadas trazendo este conjunto de informações ‘vazio’?</p>
