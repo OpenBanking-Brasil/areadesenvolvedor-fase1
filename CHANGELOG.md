@@ -1,3 +1,12 @@
+# {version}
+[{date}]
+
+## Melhorias
+
+* Implementa os parâmetros de paginação na query string de todas as APIs - especificação OAS:
+  - `page`
+  - `page-size`
+
 # 3.0.1
 [18/12/2020]
 
