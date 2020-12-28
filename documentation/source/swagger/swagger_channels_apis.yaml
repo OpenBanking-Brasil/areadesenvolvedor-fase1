@@ -316,6 +316,7 @@ components:
           items:
             $ref: '#/components/schemas/BankingAgent'
           minItems: 1
+          maxItems: 20
       allOf:
         - $ref: '#/components/schemas/CNPJ'
     ResponseBranchesList:
@@ -620,6 +621,7 @@ components:
       properties:
         standards:
           type: array
+          maxItems: 7
           items:
             required:
               - weekday
