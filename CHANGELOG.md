@@ -11,7 +11,8 @@
 * Adiciona o valor do `cnpjNumber` nos exemplos de `branch` na área de `Identification`
 
 ## Correções
-* Correção de descrição `Brand` em `Branch`;
+* Corrige quantidade máxima de items na lista de `BankingAngesSerice` em `bankingAgents`
+* Corrige quantidade máxima de items na lista `BankingAgentAvailability`
 
 # 3.0.1
 [18/12/2020]
