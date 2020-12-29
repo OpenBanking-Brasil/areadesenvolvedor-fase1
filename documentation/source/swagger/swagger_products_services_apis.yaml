@@ -247,7 +247,7 @@ components:
       type: object
       required:
         - name
-        - cnpjNumbers
+        - cnpjNumber
       allOf:
         - $ref: '#/components/schemas/Company'
       properties:
