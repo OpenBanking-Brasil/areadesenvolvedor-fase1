@@ -930,7 +930,7 @@ components:
       required:
         - type
         - fees
-        - interestRate
+        - interestRates
         - requiredWarranties
         - termsConditions
       properties:
