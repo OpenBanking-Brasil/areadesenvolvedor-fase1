@@ -992,7 +992,6 @@ components:
         - prices
         - minimum
         - maximum
-        - customers
       properties:
         name:
           type: string
@@ -1612,7 +1611,6 @@ components:
         - prices
         - minimum
         - maximum
-        - customers
         - chargingTriggerInfo
     FinancingInterestRate:
       type: object
@@ -1662,7 +1660,6 @@ components:
         - applications
         - minimumRate
         - maximumRate
-        - customers
     ResponseBusinessFinancings:
       type: object
       required:
@@ -1936,7 +1933,6 @@ components:
         - applications
         - minimumRate
         - maximumRate
-        - customers
     ResponseBusinessInvoiceFinancings:
       type: object
       required:
@@ -2122,7 +2118,7 @@ components:
       type: object
       required:
         - fees
-        - interestRate
+        - interestRates
         - termsConditions
       properties:
         fees:
@@ -2341,7 +2337,7 @@ components:
       type: object
       required:
         - fees
-        - interestRate
+        - interestRates
         - termsConditions
       properties:
         fees:
