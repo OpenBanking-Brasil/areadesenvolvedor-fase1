@@ -6,7 +6,7 @@ info:
   contact:
     email: "apiteam@swagger.io"
 servers:
-  - url: 'http://api.banco.com.br/open-banking/admin/v1'
+  - url: 'http://api.banco.com.br/open-banking/admin/v2'
 tags:
 - name: "Metrics"
 paths:
@@ -335,11 +335,11 @@ components:
         self:
           type: string
           description: URL da página atualmente requisitada
-          example: 'https://api.banco.com.br/open-banking/admin/v1/<resource>'
+          example: 'https://api.banco.com.br/open-banking/admin/v2/<resource>'
         first:
           type: string
           description: URL da primeira página de registros
-          example: 'https://api.banco.com.br/open-banking/admin/v1/<resource>'
+          example: 'https://api.banco.com.br/open-banking/admin/v2/<resource>'
         prev:
           type: string
           description: URL da página anterior de registros
@@ -349,7 +349,7 @@ components:
         last:
           type: string
           description: URL da última página de registros
-          example: 'https://api.banco.com.br/open-banking/admin/v1/<resource>'
+          example: 'https://api.banco.com.br/open-banking/admin/v2/<resource>'
     Meta:
       type: object
       properties:
