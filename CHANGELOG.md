@@ -1,7 +1,12 @@
 # {version}
 [{date}]
 
+## Quebras de compatibilidade
+
+* Altera o esquema de versionamento para utilização de release candidate visto que as implementações das APIs ainda não estão em vigor.
+
 ## Novos recursos
+
 * Implementa os parâmetros de paginação na query string de todas as APIs - especificação OAS:
   - `page`
   - `page-size`
@@ -14,6 +19,7 @@
   - Sendo consideradas somente as operações "contratadas" no mês da apuração no cálculo e disponibilização de informações relativas a distribuição de frequência de Tarifas.
 
 ## Correções
+
 * Corrige quantidade máxima de items na lista `BankingAgentAvailability`
 * Corrige descrição da Divulgação dos valores de tarifas e taxas de juros remuneratórias:
   - Atualiza descrição de serviço na seção "Tarifas – Apuração Frequência e valores correspondentes"
@@ -22,7 +28,7 @@
   - Tarifas – Apuração Frequência e valores correspondentes
   - Taxas Remuneratórias – Apuração Frequência e valores correspondentes 1
 
-# 3.0.1
+# v1.0.0-rc4
 [18/12/2020]
 
 ## Melhorias
@@ -47,7 +53,7 @@
   - `personal_invoice_financings.csv`;
   - `personal_loans.csv`;
 
-# 3.0.0
+# v1.0.0-rc3
 [14/12/2020]
 
 ## Quebras de compatibilidade
@@ -170,7 +176,9 @@
 * Corrigi o versionamento dos exemplos das APIs de status e outages.
 * Atualiza os dicionários de dados com as correções;
 
-# 2.0.0
+# v1.0.0-rc2
 [30/11/2020]
 
-Versão 2.0.0 liberada com quebra de compatibilidade pois houveram alterações obrigatoriedade, valores de enumerações e remoção de campos de algumas APIs.
+Versão rc2 liberada com quebra de compatibilidade pois houveram alterações obrigatoriedade, valores de enumerações e remoção de campos de algumas APIs.
+
+# v1.0.0-rc
