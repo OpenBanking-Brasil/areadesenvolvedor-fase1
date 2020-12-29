@@ -6,7 +6,7 @@ info:
   contact:
     email: apiteam@swagger.io
 servers:
-  - url: 'http://api.banco.com.br/open-banking/products-services/v2'
+  - url: 'http://api.banco.com.br/open-banking/products-services/v3'
 tags:
   - name: Accounts
   - name: Loans
@@ -2662,11 +2662,11 @@ components:
         self:
           type: string
           description: URL da página atualmente requisitada
-          example: 'https://api.banco.com.br/open-banking/products-services/v1/<resource>'
+          example: 'https://api.banco.com.br/open-banking/products-services/v3/<resource>'
         first:
           type: string
           description: URL da primeira página de registros
-          example: 'https://api.banco.com.br/open-banking/products-services/v1/<resource>'
+          example: 'https://api.banco.com.br/open-banking/products-services/v3/<resource>'
         prev:
           type: string
           description: URL da página anterior de registros
@@ -2676,7 +2676,7 @@ components:
         last:
           type: string
           description: URL da última página de registros
-          example: 'https://api.banco.com.br/open-banking/products-services/v1/<resource>'
+          example: 'https://api.banco.com.br/open-banking/products-services/v3/<resource>'
     Meta:
       type: object
       properties:
