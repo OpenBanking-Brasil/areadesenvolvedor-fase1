@@ -721,7 +721,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BranchPhone'
-          minItems: 1
           description: Lista de telefones da Dependência
         services:
           type: array
@@ -780,7 +779,7 @@ components:
           description: Nome da dependência
         cnpjNumer:
           type: string
-          pattern: ^(\d{14})$|^NA$
+          pattern: '^(\d{14})$'
           minLength: 14
           maxLength: 14
           description: Número completo do CNPJ da dependência - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
@@ -1172,6 +1171,7 @@ components:
           $ref: '#/components/schemas/SharedAutomatedTellerMachinesAvailability'
         services:
           type: array
+          maxItems: 20
           items:
             $ref: '#/components/schemas/SharedAutomatedTellerMachinesServices'
     SharedAutomatedTellerMachinesServices:
@@ -1646,6 +1646,7 @@ components:
       properties:
         standards:
           type: array
+          maxItems: 20
           items:
             properties:
               weekday:
