@@ -10,6 +10,7 @@
 * Implementa os parâmetros de paginação na query string de todas as APIs - especificação OAS:
   - `page`
   - `page-size`
+* Adiciona versões anteriores do site para que seja possível consultar o histórico de modo visual.
 
 ## Melhorias
 
