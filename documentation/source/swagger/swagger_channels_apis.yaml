@@ -1027,7 +1027,7 @@ components:
           description: "Identificação do Tipo de telefone da dependência. p.ex.FIXO, MOVEL."
         countryCallingCode:
           type: string
-          maxLength: 2
+          maxLength: 4
           pattern: ^\d{2}$
           example: "55"
           description: "Número de DDI (Discagem Direta Internacional) para  telefone de acesso ao Canal - se houver. p.ex. '55'"
@@ -1466,7 +1466,7 @@ components:
       properties:
         countryCallingCode:
           type: string
-          maxLength: 2
+          maxLength: 4
           pattern: ^\d{2}$|^NA$
           example: "55"
           description: "Número de DDI (Discagem Direta Internacional) para telefone de acesso ao Canal - se houver."
