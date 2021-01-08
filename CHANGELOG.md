@@ -1,4 +1,51 @@
-# 3.0.1
+# v1.0.0-rc5
+[08/01/2021]
+
+## Quebras de compatibilidade
+
+* Altera o esquema de versionamento para utilização de release candidate visto que as implementações das APIs ainda não estão em vigor.
+
+## Novos recursos
+
+* Implementa os parâmetros de paginação na query string de todas as APIs - especificação OAS:
+  - `page`
+  - `page-size`
+* Adiciona versões anteriores do site para que seja possível consultar o histórico de modo visual.
+
+## Melhorias
+
+* Adiciona o valor do `cnpjNumber` nos exemplos de `branch` na área de `Identification`
+* Adiciona mais detalhes na pergunta e na resposta das seguintes seções no FAQ:
+  - Sendo consideradas somente as operações “contratadas” no mês da apuração no cálculo e disponibilização de informações relativas a distribuição de frequência de Taxas remuneratórias.
+  - Sendo consideradas somente as operações "contratadas" no mês da apuração no cálculo e disponibilização de informações relativas a distribuição de frequência de Tarifas.
+* Adiciona as questões em relação às definições e orientações recebidas dos GTs no FAQ:
+  - É possível incluir novos Tipos de cartão?
+  - Como reportar Agências Digitais?
+  - Dúvida sobre inclusão de operações de repasse dentro do reporte do Open Banking
+  - Dúvidas sobre a participação optativa da Fase 1 e Fase 2
+* Adiciona as questões em relação às definições e orientações recebidas do Regulador no FAQ:
+  - Considerar data da concessão ou data da liberação para o Cálculo da distribuição de frequência para operações com característica de liberações parciais?
+  - Como devemos tratar distribuição de frequência sobre taxas remuneratórias para outras operações de crédito relacionadas ao Produto Cartão?
+
+## Correções
+* Corrige quantidade máxima de items na lista `BankingAgentAvailability`;
+* Corrige descrição da Divulgação dos valores de tarifas e taxas de juros remuneratórias:
+  - Atualiza descrição de serviço na seção "Tarifas – Apuração Frequência e valores correspondentes";
+  - Atualiza descrição em modalidade na seção "Apuração Frequência Taxas Juros remuneratórios";
+* Corrige exemplos de uso em Divulgação dos valores de tarifas e taxas de juros remuneratórias:
+  - Tarifas – Apuração Frequência e valores correspondentes;
+  - Taxas Remuneratórias – Apuração Frequência e valores correspondentes 1;
+* Corrige quantidade máxima de items na lista `SharedAutomatedTellerMachinesAvailability`;
+* Corrige quantidade máxima de items na lista `SharedAutomatedTellerMachinesServices`;
+* Corrige descrição de `geograpichCoordinates` de `response_shared_automated_teller_machines_list`;
+* Corrige a quantidade minima de items no campo `phones` em `branch`;
+* Corrige os campos `minimumRate` e `maximumRate` de cartões de crédito PN e PJ para `minimum/rate` e `maximum/rate`;
+* Atualiza os dicionários com as correções acima;
+* Corrige tabela de códigos de resposta para chamadas com o método POST, onde estava sinalizado que poderia haver retorno com código 200 porém será sempre 201.
+* Corrige em `rates` em `interest/rates/applications/rate` para Cartão de Crédito PN e PJ para ficar de acordo com os respectivos dicionários.
+* Corrige quantidade máxima de caracteres em `CountryCallingCode` para 4.
+
+# v1.0.0-rc4
 [18/12/2020]
 
 ## Melhorias
@@ -23,7 +70,7 @@
   - `personal_invoice_financings.csv`;
   - `personal_loans.csv`;
 
-# 3.0.0
+# v1.0.0-rc3
 [14/12/2020]
 
 ## Quebras de compatibilidade
@@ -146,7 +193,9 @@
 * Corrigi o versionamento dos exemplos das APIs de status e outages.
 * Atualiza os dicionários de dados com as correções;
 
-# 2.0.0
+# v1.0.0-rc2
 [30/11/2020]
 
-Versão 2.0.0 liberada com quebra de compatibilidade pois houveram alterações obrigatoriedade, valores de enumerações e remoção de campos de algumas APIs.
+Versão rc2 liberada com quebra de compatibilidade pois houveram alterações obrigatoriedade, valores de enumerações e remoção de campos de algumas APIs.
+
+# v1.0.0-rc

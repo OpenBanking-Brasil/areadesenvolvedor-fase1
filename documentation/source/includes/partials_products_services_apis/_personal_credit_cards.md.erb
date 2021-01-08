@@ -3,7 +3,7 @@
 > Exemplo de código
 
 ```http
-GET https://api.banco.com.br/open-banking/products-services/v3/personal-credit-cards HTTP/1.1
+GET https://api.banco.com.br/open-banking/products-services/v1/personal-credit-cards HTTP/1.1
 Host: api.banco.com.br
 Accept: application/json
 
@@ -12,7 +12,7 @@ Accept: application/json
 ```javascript
 var req = new XMLHttpRequest();
 req.setRequestHeader("Accept", "application/json");
-req.open("GET", "https://api.banco.com.br/open-banking/products-services/v3/personal-credit-cards", true);
+req.open("GET", "https://api.banco.com.br/open-banking/products-services/v1/personal-credit-cards", true);
 req.send();
 
 ```
@@ -103,43 +103,39 @@ req.send();
                     "applications": [
                       {
                         "interval": "1_FAIXA",
-                        "indexer": {
-                          "rate": "0.0987"
-                        },
+                        "rate": "0.0987",
                         "customers": {
                           "rate": "0.1500"
                         }
                       },
                       {
                         "interval": "2_FAIXA",
-                        "indexer": {
-                          "rate": "0.1600"
-                        },
+                        "rate": "0.1600",
                         "customers": {
                           "rate": "0.3500"
                         }
                       },
                       {
                         "interval": "3_FAIXA",
-                        "indexer": {
-                          "rate": "0.3600"
-                        },
+                        "rate": "0.3600",
                         "customers": {
                           "rate": "0.2000"
                         }
                       },
                       {
                         "interval": "4_FAIXA",
-                        "indexer": {
-                          "rate": "0.5890"
-                        },
+                        "rate": "0.5890",
                         "customers": {
                           "rate": "0.3000"
                         }
                       }
                     ],
-                    "minimumRate": "0.0845",
-                    "maximumRate": "0.9000"
+                    "minimum":{
+                      "rate": "0.0845"
+                    },
+                    "maximum":{
+                      "rate": "0.9000"
+                    }
                   }
                 ],
                 "instalmentRates": [
@@ -184,8 +180,12 @@ req.send();
                         }
                       }
                     ],
-                    "minimumRate": "0.0456",
-                    "maximumRate": "0.0865"
+                    "minimum":{
+                      "rate": "0.0456"
+                    },
+                    "maximum":{
+                      "rate": "0.0865"
+                    }
                   }
                 ],
                 "otherCredits": [
@@ -210,11 +210,11 @@ req.send();
     }
   },
   "links": {
-    "self": "https://api.banco.com.br/open-banking/products-services/v3/personal-credit-cards",
-    "first": "https://api.banco.com.br/open-banking/products-services/v3/personal-credit-cards",
+    "self": "https://api.banco.com.br/open-banking/products-services/v1/personal-credit-cards",
+    "first": "https://api.banco.com.br/open-banking/products-services/v1/personal-credit-cards",
     "prev": "string",
     "next": "string",
-    "last": "https://api.banco.com.br/open-banking/products-services/v3/personal-credit-cards"
+    "last": "https://api.banco.com.br/open-banking/products-services/v1/personal-credit-cards"
   },
   "meta": {
     "totalRecords": 1,
@@ -227,7 +227,7 @@ req.send();
 
 Versão|
 ------|
-3     |
+1     |
 
 ### Visão Geral
 

@@ -345,16 +345,18 @@ Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial o
   "applications": [
     {
       "interval": "string",
-      "indexer": {
-        "rate": "string"
-      },
+      "rate": "string",
       "customers": {
         "rate": "string"
       }
     }
   ],
-  "minimumRate": "string",
-  "maximumRate": "string"
+  "minimum":{
+    "rate": "string"
+  },
+  "maximum":{
+    "rate": "string"
+  }
 }
 ```
 
@@ -362,13 +364,33 @@ Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial o
 |:--------------------- |:--------------------------------------------------------------|:------------|:--------------------------------------------------------------------------------------------------------------------- |
 | referentialRateIndexer| [ReferentialRateIndexer](#schemareferentialrateorindexer)     | Sim         | Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040 |
 | rate                  | [RateString](#commonFieldRateString)                          | Sim         | Percentual que incide sobre a composição das taxas de juros remuneratórios.                                           |
-| applications          | [Application](#schemaApplication)                             | Sim         | Lista distribuição percentuais relativos à taxa de juros remuneratórios                                               |
-| minimumRate           | String                                                        | Sim         | Percentual mínimo cobrado para a taxa do crédito rotativo no mês de referência.                                       |
-| maximumRate           | String                                                        | Sim         | Percentual máximo cobrado para o pagamento parcelado do saldo devedor na fatura do mês de referência.                 |
+| applications          | [CreditCardApplication](#schemaCreditCardApplication)         | Sim         | Lista distribuição percentuais relativos à taxa de juros remuneratórios                                               |
+| minimum               | [Minimum](#schemaMinimumRateCredit)                           | Sim         | Percentual mínimo cobrado para a taxa do crédito rotativo no mês de referência.                                       |
+| maximum               | [Maximum](#schemaMaximumRateCredit)                           | Sim         | Percentual máximo cobrado para o pagamento parcelado do saldo devedor na fatura do mês de referência.                 |
 
-### Enum CreditCardInterestRateCode
+## CreditCardApplication
 
-<a id="schemaEnumCreditCardInterestRateCode"></a>
+<a id="schemaCreditCardApplication"></a>
+
+```json
+{
+  "interval": "string",
+  "rate": "string",
+  "customers": {
+    "rate": "string"
+  }
+}
+```
+
+|   Nome    | Tipo                                       | Obrigatório | Definição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|:--------- |:------------------------------------------ |:----------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| interval  | [Enum PriceInterval](#schemaPriceInterval) | Sim         | Faixas para cobrança da taxa efetiva aplicada pela contratação do crédito, no intervalo informado: 1ª faixa, 2ª faixa, 3ª faixa e 4ª faixa. Segundo Normativa nº32 de 2020: 'Distribuição de frequência relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o § 2º do art. 3º da Circular nº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitação dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas. |
+| rate      | string                                     | Sim         | Percentual que corresponde a mediana (taxa efetiva) cobrada do cliente pela utilização do crédito rotativo, no intervalo informado. p.ex. '0,8700%'. A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros (representação de porcentagem p.ex: 0.15. Este valor representa 15%. O valor 1 representa 100%)                                                                                                      |
+| customers | [Customer](#schemaCustomer)                | Sim         | Percentual de clientes em cada faixa.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+
+### Enum OtherCreditCode
+
+<a id="schemaEnumOtherCreditCode"></a>
 
 | Propriedade                 | Código               | Definição           |
 |:----------------------------|:---------------------|:------------------- |
@@ -376,9 +398,9 @@ Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial o
 | code                        | PAGAMENTO_CONTA      | Pagamento de contas |
 | code                        | OUTROS               | Outros              |
 
-## CreditCardInterestRate
+## OtherCredit
 
-<a id="schemaCreditCardInterestRate"></a>
+<a id="schemaOtherCredit"></a>
 
 ```json
 {
@@ -389,7 +411,7 @@ Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial o
 
 |     Nome       |  Tipo                                                                    | Obrigatório |    Definição                                                                                         |
 |:---------------|:-------------------------------------------------------------------------|:------------|:-----------------------------------------------------------------------------------------------------|
-| code           | [Enum CreditCardInterestRateCode](#schemaEnumCreditCardInterestRateCode) | Sim         | Lista de outras operações de crédito.                                                                |
+| code           | [Enum OtherCreditCode](#schemaEnumOtherCreditCode) | Sim         | Lista de outras operações de crédito.                                                                |
 | additionalInfo | string                                                                   | Não         | Campo Texto para descrever outras operações de crédito marcadas como 'OUTROS'.                       |
 
 ## CreditCardInstalmentRate
@@ -411,8 +433,12 @@ Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial o
       }
     }
   ],
-  "minimumRate": "string",
-  "maximumRate": "string"
+  "minimum":{
+    "rate": "string"
+  },
+  "maximum":{
+    "rate": "string"
+  }
 }
 ```
 
@@ -421,8 +447,8 @@ Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial o
 | referentialRateIndexer | [ReferentialRateIndexer](#schemareferentialrateorindexer) | Sim         | Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040 |
 | rate                   | [RateString](#commonFieldRateString)                      | Sim         | Percentual que incide sobre a composição das taxas de juros remuneratórios.                                           |
 | applications           | [Application](#schemaApplication)                         | Sim         | Lista distribuição preços tarifas de serviços                                                                         |
-| minimumRate            | String                                                    | Sim         | Percentual mínimo cobrado para a taxa do crédito rotativo no mês de referência.                                       |
-| maximumRate            | String                                                    | Sim         | Percentual máximo cobrado para o pagamento parcelado do saldo devedor na fatura do mês de referência.                 |
+| minimum                | [Minimum](#schemaMinimumRateCredit)                       | Sim         | Percentual mínimo cobrado para a taxa do crédito rotativo no mês de referência.                                       |
+| maximum                | [Maximum](#schemaMaximumRateCredit)                       | Sim         | Percentual máximo cobrado para o pagamento parcelado do saldo devedor na fatura do mês de referência.                 |
 
 ## CreditCardInterest
 
@@ -437,16 +463,18 @@ Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial o
       "applications": [
         {
           "interval": "string",
-          "indexer": {
-            "rate": "string"
-          },
+          "rate": "string",
           "customers": {
             "rate": "string"
           }
         }
       ],
-      "minimumRate": "string",
-      "maximumRate": "string"
+      "minimum":{
+        "rate": "string"
+      },
+      "maximum":{
+        "rate": "string"
+      }
     }
   ],
   "instalmentRates": [
@@ -464,8 +492,12 @@ Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial o
           }
         }
       ],
-      "minimumRate": "string",
-      "maximumRate": "string"
+      "minimum":{
+        "rate": "string"
+      },
+      "maximum":{
+        "rate": "string"
+      }
     }
   ],
   "otherCredits": [
@@ -481,7 +513,7 @@ Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial o
 |:--------------- |:----------------------------------------------------------- |:------------ |:------------------------------------------------------------ |
 | rates           | [CreditCardRate](#schemaCreditCardRate)                     | Sim          | Lista da representação que traz o conjunto de informações necessárias para demonstrar a distribuição de frequências das taxas de juros remuneratórios para crédito rotativo |
 | instalmentRates | [CreditCardInstalmentRate](#schemaCreditCardInstalmentRate) | Sim          | Percentual que corresponde a taxa aplicada para pagamento parcelado do saldo devedor quando não realizado pagamento integral da fatura                                      |
-| otherCredits    | [CreditCardInterestRate](#schemaCreditCardInterestRate)     | Sim          | Lista de outras operações de crédito                                                                                                                                        |
+| otherCredits    | [OtherCredit](#schemaOtherCredit)                           | Sim          | Lista de outras operações de crédito                                                                                                                                        |
 
 ## CreditCardTermsConditions
 
@@ -502,6 +534,40 @@ Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial o
 | additionalInfo          | string                                | Não             | Campo aberto para detalhamento de taxas de juros. <br> Restrição: Se o campo 'code' vier selecionado com 'OUTROS' é obrigatório o preenchimento do additonalInfo |
 | elegibilityCriteriaInfo | string                                | Sim             | Informação sobre as condições e critérios de elegibilidade do emissor do cartão. Pode ser informada a URL referente ao endereço onde constam as condições informadas. |
 | closingProcessInfo      | string                                | Sim             | Descrição dos procedimentos para encerramento da conta de pagamento pós paga. Pode ser informada a URL referente ao endereço onde constam as condições informadas.    |
+
+
+## MinimumRateCredit
+
+<a id="schemaMinimumRateCredit"></a>
+
+```json
+{
+   "minimum"{
+       "rate": "string"
+   }
+}
+```
+
+|     Nome                |  Tipo                                 | Obrigatório   |   Definição                                                                                                                                                                                                                                                                   |
+|:------------------------|:------------------------------------- |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| rate                    | string                                | Sim           | Percentual mínimo cobrado (taxa efetiva) no mês de referência, pela utilização do crédito rotativo(A apuração deve pode ser feita com até 4 casas decimais. A representação de porcentagem p.ex: do 0.1500 representa 15% Desta forma, o valor 1 representa 100 porcento)    |
+
+## MaximumRateCredit
+
+<a id="schemaMaximumRateCredit"></a>
+
+```json
+{
+  "maximum"{
+    "rate": "string"
+  }
+}
+```
+
+|     Nome                |  Tipo                                 | Obrigatório   |   Definição                                                                                                                                                                                                                                                         |
+|:------------------------|:------------------------------------- |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| rate                    | string                                | Sim           | Percentual máximo cobrado (taxa efetiva) no mês de referência, pela utilização do crédito rotativo(A apuração deve pode ser feita com até 4 casas decimais. A representação de porcentagem p.ex: do 0.1500 representa 15% Desta forma, o valor 1 representa 100 porcento)  |
+
 
 ## ServiceBundle
 

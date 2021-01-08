@@ -1,4 +1,5 @@
 ﻿Xpath;Nome;Definição;Tipo do Dado;Tamanho;Mandatoriedade;Formato;Domínio;Mínimo de Ocorrências;Máximo de Ocorrências;Restrições;;;
+openBankingBrazil/<brand>/;;Brand  é o objeto que representa a Organização controladora do grupo de instituições financeiras;Objeto;;;;;;;;;;
 openBankingBrazil/<brand>/name;name;Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes;Texto;80;Obrigatório;\w*\W*;;1;1;NA;;;
 openBankingBrazil/<brand>/companies/;;Companies traz uma lista de todas as instuituições da Marca;Lista;;Obrigatório;;;1;N;;;;
 openBankingBrazil/<brand>/companies/name;name;Nome da Instituição, pertencente à marca, responsável pelo Correspondente Bancário no pais. p.ex.'Empresa da Organização A';Texto;80;Obrigatório;\w*\W*;;1;1;NA;;;
@@ -35,10 +36,11 @@ openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/postalAd
 openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/postalAddress/postCode;postCode;Código de Endereçamento Postal: Composto por um conjunto numérico de oito dígitos, o objetivo principal do CEP é orientar e acelerar o encaminhamento, o tratamento e a entrega de objetos postados nos Correios, por meio da sua atribuição a localidades, logradouros, unidades dos Correios, serviços, órgãos públicos, empresas e edifícios. p.ex. '01311000';Texto;8;Obrigatório;\d{8}|^NA$;;1;N;NA;;;
 openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/postalAddress/country;country;Nome do país. p.ex. Brasil;Texto;80;Opcional;\w*\W*;;0;1; ;;;
 openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/postalAddress/countryCode;countryCode;Código do pais de acordo com o código “alpha3” do ISO-3166.p.ex.'BRA';Texto;;Opcional;;BRA;0;1;;;;
+openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/postalAddress/geographicCoordinates/;;Objeto agrupador das informações que compõem as Coordenadas geográficas: latitude e longitude;Objeto;;;;;;; ;;;
 openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/postalAddress/geographicCoordinates/latitude;latitude;Informação da Latitude referente a geolocalização informada. Entre -90 e 90.p.ex. '-90.8365180' ;Texto;13;Opcional;^-?\d{1,2}\.\d{1,9}$;;0;1; ;;;
 openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/postalAddress/geographicCoordinates/longitude;longitude;"Informação da Longitude referente a geolocalização informada. Entre -180 e 180.p.ex
 '-180.836519.' ";Texto;13;Opcional;^-?\d{1,3}\.\d{1,8}$;;0;1; ;;;
-openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/availability/standards/;;Relação da disponbilidade de atendimento;Lista;;;;;1;7;;;;
+openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/availability/standards/;;Relação da disponbilidade de atendimento;Lista;;;;;0;7;;;;
 openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/availability/standards/weekday;weekday;Em formato texto, seguindo o domínio apresentado, devem ser colocados os dias da semana;Texto;;obrigatório;;"DOMINGO
 SEGUNDA_FEIRA
 TERCA_FEIRA
@@ -56,10 +58,10 @@ false
 ";0;1; ;;;
 openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/phones/;;;Lista;;;;;0;N;;;;
 openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/phones/type;type;Identificação do Tipo de telefone da dependência. p.ex.FIXO, MOVEL;Texto;;Obrigatório;;"FIXO
-MOVEL";1;N; ;;;
-openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/phones/countryCallingCode;countryCallingCode;Número de DDI (Discagem Direta Internacional) para  telefone de acesso ao Canal - se houver. p.ex. '55';Texto;2;Opcional;^\d{2}$;;0;N; ;;;
-openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/phones/areaCode;areaCode;Número de DDD (Discagem Direta à Distância) do telefone da dependência - se houver. p.ex. '19';Texto;2;Opcional;^\d{2}$;;0;N; ;;;
-openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/phones/number;number;Número de telefone da dependência - se houver;Texto;11;Opcional;^([0-9]{8,11})$;;0;N; ;;;
+MOVEL";1;1; ;;;
+openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/phones/countryCallingCode;countryCallingCode;Número de DDI (Discagem Direta Internacional) para  telefone de acesso ao Canal - se houver. p.ex. '55';Texto;4;Opcional;^\d{4}$;;0;1; ;;;
+openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/phones/areaCode;areaCode;Número de DDD (Discagem Direta à Distância) do telefone da dependência - se houver. p.ex. '19';Texto;2;Opcional;^\d{2}$;;0;1; ;;;
+openBankingBrazil/<brand>/companies/contractors/bankingAgents/locations/phones/number;number;Número de telefone da dependência - se houver;Texto;11;Opcional;^([0-9]{8,11})$;;0;1; ;;;
 openBankingBrazil/<brand>/companies/contractors/bankingAgents/services/;;Traz a relação de serviços disponbilizados pelo Correspondente Bancário;Lista;;;;;1;20;;;;
 openBankingBrazil/<brand>/companies/contractors/bankingAgents/services/name;name;"Relação dos Nomes de serviços prestados pelo Correspondente, retornado em um array, conforme domínio
 ";Texto;;Obrigatório;;"RECEPCAO_ENCAMINHAMENTO_PROPOSTAS_ABERTURA_CONTAS_DEPOSITOS_VISTA_PRAZO_POUPANCA_MANTIDOS_INSTITUICAO_CONTRATANTE

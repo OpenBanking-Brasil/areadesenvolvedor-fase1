@@ -3,7 +3,7 @@
 > Exemplo de código
 
 ```http
-GET https://api.banco.com.br/open-banking/channels/v3/branches HTTP/1.1
+GET https://api.banco.com.br/open-banking/channels/v1/branches HTTP/1.1
 Host: api.banco.com.br
 Accept: application/json
 
@@ -12,7 +12,7 @@ Accept: application/json
 ```javascript
 var req = new XMLHttpRequest();
 req.setRequestHeader("Accept", "application/json");
-req.open("GET", "https://api.banco.com.br/open-banking/channels/v3/branches", true);
+req.open("GET", "https://api.banco.com.br/open-banking/channels/v1/branches", true);
 req.send();
 
 ```
@@ -36,6 +36,7 @@ req.send();
                 "code": "0001",
                 "checkDigit": "9",
                 "name": "Marília",
+                "cnpjNumber": "45086338000458",
                 "relatedBranch": "0001",
                 "openingDate": "2010-01-02"
               },
@@ -49,7 +50,7 @@ req.send();
                 "postCode": "17500001",
                 "country": "Brasil",
                 "countryCode": "BRA",
-                "geograficCoordinates": {
+                "geographicCoordinates": {
                   "latitude": "-90.009876543",
                   "longitude": "-180.00986543"
                 }
@@ -117,11 +118,11 @@ req.send();
     }
   },
   "links": {
-    "self": "https://api.banco.com.br/open-banking/channels/v3/branches",
-    "first": "https://api.banco.com.br/open-banking/channels/v3/branches",
+    "self": "https://api.banco.com.br/open-banking/channels/v1/branches",
+    "first": "https://api.banco.com.br/open-banking/channels/v1/branches",
     "prev": "null",
     "next": "null",
-    "last": "https://api.banco.com.br/open-banking/channels/v3/branches"
+    "last": "https://api.banco.com.br/open-banking/channels/v1/branches"
   },
   "meta": {
     "totalRecords": 1,
@@ -134,7 +135,7 @@ req.send();
 
 Versão|
 ------|
-3     |
+1     |
 
 ### Visão Geral
 
