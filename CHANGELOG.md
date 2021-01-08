@@ -26,7 +26,7 @@
 * Corrige em `rates` em `interest/rates/applications/rate` para Cartão de Crédito PN e PJ para ficar de acordo com os respectivos dicionários.
 * Corrige quantidade máxima de caracteres em `CountryCallingCode` para 4.
 
-# v1.0.0
+# v1.0.0-rc5
 [11/01/2021]
 
 ## Quebras de compatibilidade
