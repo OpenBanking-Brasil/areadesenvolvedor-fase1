@@ -2,7 +2,7 @@
 info:
   title: APIs OpenData do Open Banking Brasil
   description: As APIs descritas neste documento são referentes as APIs da fase OpenData do Open Banking Brasil.
-  version: 2.0.0-rc
+  version: 1.0.0-rc5
   contact:
     email: "apiteam@swagger.io"
 tags:
@@ -316,7 +316,6 @@ components:
           items:
             $ref: '#/components/schemas/BankingAgent'
           minItems: 1
-          maxItems: 20
       allOf:
         - $ref: '#/components/schemas/CNPJ'
     ResponseBranchesList:
@@ -351,7 +350,6 @@ components:
                       code: '0001'
                       checkDigit: '9'
                       name: 'Marília'
-                      cnpjNumber: '45086338000458'
                       relatedBranch: '0001'
                       openingDate: '2010-01-02'
                     postalAddress:
@@ -621,7 +619,6 @@ components:
       properties:
         standards:
           type: array
-          maxItems: 7
           items:
             required:
               - weekday
@@ -721,6 +718,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BranchPhone'
+          minItems: 1
           description: Lista de telefones da Dependência
         services:
           type: array
@@ -777,13 +775,6 @@ components:
           maxLength: 100
           pattern: \w*\W*
           description: Nome da dependência
-        cnpjNumer:
-          type: string
-          pattern: '^(\d{14})$'
-          minLength: 14
-          maxLength: 14
-          description: Número completo do CNPJ da dependência - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica.
-            Deve-se ter apenas os números do CNPJ, sem máscara
         relatedBranch:
           type: string
           maxLength: 4
@@ -1027,8 +1018,8 @@ components:
           description: "Identificação do Tipo de telefone da dependência. p.ex.FIXO, MOVEL."
         countryCallingCode:
           type: string
-          maxLength: 4
-          pattern: ^\d{2,4}$
+          maxLength: 2
+          pattern: ^\d{2}$
           example: "55"
           description: "Número de DDI (Discagem Direta Internacional) para  telefone de acesso ao Canal - se houver. p.ex. '55'"
         areaCode:
@@ -1171,7 +1162,6 @@ components:
           $ref: '#/components/schemas/SharedAutomatedTellerMachinesAvailability'
         services:
           type: array
-          maxItems: 20
           items:
             $ref: '#/components/schemas/SharedAutomatedTellerMachinesServices'
     SharedAutomatedTellerMachinesServices:
@@ -1466,8 +1456,8 @@ components:
       properties:
         countryCallingCode:
           type: string
-          maxLength: 4
-          pattern: ^\d{2,4}$|^NA$
+          maxLength: 2
+          pattern: ^\d{2}$|^NA$
           example: "55"
           description: "Número de DDI (Discagem Direta Internacional) para telefone de acesso ao Canal - se houver."
         areaCode:
@@ -1550,7 +1540,7 @@ components:
           example: ""
     GeographicCoordinates:
       type: object
-      description: 'Objeto agrupador das informações que compõem as Coordenadas geográficas: latitude e longitude'
+      description: Informação referente a geolocalização informada.
       properties:
         latitude:
           description: Informação da latitude referente a geolocalização informada.
@@ -1618,7 +1608,7 @@ components:
         - totalRecords
         - totalPages
 
-    #### ATM specific schemas because of optional NA values ####
+#### ATM specific schemas because of optional NA values ####
     SharedAutomatedTellerMachinesCompany:
       type: object
       properties:
@@ -1646,7 +1636,6 @@ components:
       properties:
         standards:
           type: array
-          maxItems: 20
           items:
             properties:
               weekday:
