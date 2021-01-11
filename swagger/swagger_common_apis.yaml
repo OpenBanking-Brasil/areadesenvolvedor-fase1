@@ -2,7 +2,7 @@
 info:
   title: APIs OpenData do Open Banking Brasil
   description: As APIs descritas neste documento são referentes as APIs da fase OpenData do Open Banking Brasil.
-  version: 1.0.0-rc5
+  version: 1.0.1
   contact:
     email: "apiteam@swagger.io"
 servers:
@@ -17,9 +17,6 @@ paths:
       summary: a descrição referente ao código de status retornado pelas APIs
       description: " descrição referente ao código de status retornado pelas APIs"
       operationId: "getStatus"
-      parameters:
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
       responses:
         '200':
           description: código de status retornado pelas APIs
@@ -34,9 +31,6 @@ paths:
       summary: a descrição referente ao código de status retornado pelas APIs
       description: "a descrição referente ao código de status retornado pelas APIs"
       operationId: "getOutage"
-      parameters:
-        - $ref: "#/components/parameters/page"
-        - $ref: "#/components/parameters/pageSize"
       responses:
         '200':
           description: código de status retornado pelas APIs
@@ -180,20 +174,4 @@ components:
             type: string
           example:
             - 'https://api.banco.com.br/open-banking/channels/v1/electronic-channels'
-  parameters:
-    page:
-      name: page
-      in: query
-      description: Número da página que está sendo requisitada (o valor da primeira página é 1).
-      schema:
-        type: integer
-        default: 1
-        minimum: 1
-    pageSize:
-      name: page-size
-      in: query
-      description: Quantidade total de registros por páginas.
-      schema:
-        type: integer
-        default: 25
-        minimum: 1
+
