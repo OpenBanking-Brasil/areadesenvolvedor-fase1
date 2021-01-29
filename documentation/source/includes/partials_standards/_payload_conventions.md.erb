@@ -70,10 +70,10 @@ O objeto de `links` sempre irá conter o atributo `self` que irá apontar para a
 }
 ```
 
-* O objeto `errors` será um array de zero ou mais objetos. Os atributos deste objeto serão os descritos abaixo:
+* O objeto `errors` será um *array* de zero ou mais objetos. Os atributos deste objeto serão os descritos abaixo:
     - obrigatoriamente o atributo `code` contendo um código de erro específico do *endpoint*;
-    - obrigatoriamente o atributo `title` contendo um título legível por humanos do erro deste erro específico;
-    - obrigatoriamente o atributo `detail` contendo uma descrição legível por humanos deste erro específico;
+    - obrigatoriamente o atributo `title` contendo um título legível deste erro específico por humanos do erro deste erro específico;
+    - obrigatoriamente o atributo `detail` contendo uma descrição legível deste erro específico por humanos;
     - opcionalmente o objeto `meta` contendo dados adicionais sobre o *endpoint* que seja relevante para o erro.
 
 ### Convenções de nomenclatura de atributos
