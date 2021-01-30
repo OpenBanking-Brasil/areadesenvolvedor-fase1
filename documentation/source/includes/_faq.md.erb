@@ -1,6 +1,6 @@
 # FAQ
 
-### Como tratar campos Obrigatórios?
+### Como tratar campos obrigatórios?
 No Github, item Padrões – [Convenções de payload](#introducao-convencoes-de-payload) – Atributos vazios / nulos encontram-se as orientações solicitadas quanto ao tratamento de campos: obrigatórios, opcionais e condicionais.
 
 "Um atributo omitido (ou seja, um atributo que não está presente no *payload*) será considerado equivalente a um atributo que esteja presente com o valor `null`.
@@ -11,7 +11,7 @@ O valor booleano `false` não será considerado equivalente a `null`. Os atribut
 
 Na situação onde o campo a ser informado no payload seja obrigatório e a Instituição, seja consumidora no envio ou transmissora no retorno, não a possuir, deve-se implementar o valor padronizado: “NA” - Não se Aplica, com exceção dos campos declarados como ENUM que deverão ser sempre preenchidos com os valores válidos para o ENUM correspondente."
 
-### Como tratar campos Opcionais?
+### Como tratar campos opcionais?
 No Github, item Padrões – [Convenções de payload](#introducao-convencoes-de-payload) – Atributos vazios / nulos encontram-se as orientações solicitadas quanto ao tratamento de campos: obrigatórios, opcionais e condicionais.
 
 "Um atributo omitido (ou seja, um atributo que não está presente no *payload*) será considerado equivalente a um atributo que esteja presente com o valor `null`.
@@ -25,7 +25,7 @@ Na situação onde o campo a ser informado no payload seja obrigatório e a Inst
 ### Por que todos os campos com domínio definidos não tem tamanho explicitado no dicionário de dados?
 Por Padrão, explicitado no item [Tipos de Dados Comuns](#introducao-tipos-de-dados-comuns), no Github, todos os possíveis conteúdos de Enum estão declarados. Não é informado o tamanho para este tipo de dado. Cada instituição definirá o tamanho máximo a ser adotado. Como regra observar que o tamanho máximo deve ser igual ou maior ao tamanho total da maior ocorrência da lista.
 
-### No momento, o compartilhamento dos dados relativos aos Terminais de autoatendimento compartilhados é facultativo?
+### No momento, o compartilhamento dos dados relativos aos terminais de autoatendimento compartilhados é facultativo?
 A normativa nº 35 explicita a existência da API de Terminais de autoatendimento compartilhado, por isso o Github traz esta estrutura.
 Num primeiro momento, foi declarado através da normativa nº 35 que todos seus atributos são opcionais.
 
@@ -62,5 +62,5 @@ O atributo `weekday` faz parte da lista `availability`, assim como `phonestype` 
   - Modalidades de crédito comercializadas que têm Tarifas de serviços diferenciadas para funcionários deverão ser consideradas no cálculo da distribuição de frequência? Considerando assim, funcionários consumidores de produto também como clientes?
     - R.: O entendimento é que o funcionário é cliente nos produtos, ele deve sim entrar na conta (ele é um cliente com condições especiais de taxas e tarifas, assim como outros clientes que também conseguem negociar condições especiais por diversos outros motivos).
 
-### Orientações, padrões e exemplos sobre apuração dos valores para a distribuição de frequência de Tarifas e Taxas Remuneratórias
+### Orientações, padrões e exemplos sobre apuração dos valores para a distribuição de frequência de tarifas e taxas remuneratórias
 Podem ser encontradas no item [Divulgação dos valores de tarifas e taxas de juros remuneratórias](#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias), em API – Produtos Serviços.

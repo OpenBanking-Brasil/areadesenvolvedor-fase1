@@ -1,7 +1,7 @@
 ## Paginação
 
 Cada recurso de cada API pode possuir ou não paginação, caso a quantidade de registros retornados justifique a mesma. 
-A paginação estará disponível e deverá funcionar independente se o recurso permite filtros por *query* ou POST. Isso é, filtros e paginação são aplicados de forma independente.
+A paginação estará disponível e deverá funcionar independente se o recurso permitir filtros por *query* ou POST. Isso é, filtros e paginação serão aplicados de formas independentes.
 
 ### Parâmetros de Requisição
 
@@ -50,7 +50,7 @@ O valor padrão será assumido sempre que o parâmetro não estiver preenchido o
 Além dos dados requisitados, as respostas paginadas também terão em sua estrutura dois objetos adicionais que incluirão parâmetros para facilitar a nagevação das páginas:
 
 ### Links
-O objeto `links` passará por revisão subsequente de modo a atender as próximas Fases do Open Banking, em especial a partir da Fase 2. No objeto `links`, serão retornadas hypermedia (referências para os recursos relacionados) de paginação conforme parâmetros abaixo:
+O objeto `links` passará por revisão subsequente de modo a atender às próximas fases do Open Banking, em especial a partir da Fase 2. No objeto `links`, retornará *hypermedia* (referências para os recursos relacionados) de paginação conforme parâmetros abaixo:
 
 | Parâmetro | Descrição                                                                  | Restrição                                             |
 |:--------- |:-------------------------------------------------------------------------- |:----------------------------------------------------- |
@@ -60,7 +60,7 @@ O objeto `links` passará por revisão subsequente de modo a atender as próxima
 | next      | A URI para requisitar a próxima página.                                    | Obrigatório se a resposta não for a última página.    |
 
 ### Meta
-No objeto `meta`, serão retornadas informações sobre o total de registros disponíveis
+No objeto `meta`, retornará informações sobre o total de registros disponíveis
 
 | Parâmetro     | Descrição                                    | Restrição                                                                       |
 |:------------- |:-------------------------------------------- |:------------------------------------------------------------------------------- |

@@ -58,12 +58,12 @@ Para os *endpoints* definidos dentro da estrutura acima, os atributos dos *paylo
 
 ### Novos endpoints em APIs existentes
 
-Quando o participante desejar adicionar um novo *endpoint* em uma API já especificada no padrão, o participante deve incluir seu `<PID>` como prefixo do recurso que será implementado.
+Quando o participante desejar adicionar um novo *endpoint* em uma API já especificada no padrão, deverá incluir seu `<PID>` como prefixo do recurso que será implementado.
 
 Por exemplo, assumindo a existência do *endpoint* abaixo para consulta das transações de uma conta:
 `<host>/open-banking/accounts/v1/accounts/{account ID}/transactions`
 
-Se o participante deseja adicionar um novo *endpoint* que resume as transações por um período, então este *endpoint* poderia ser definido como:
+Se o participante desejar adicionar um novo *endpoint* que resume as transações por um período, então este *endpoint* poderá ser definido como:
 `<host>/open-banking/accounts/v1/accounts/{account ID}/<PID>-balance-movement`
 
 <aside class="warning">
@@ -80,7 +80,7 @@ Se o participante deseja adicionar um novo *endpoint* que resume as transações
 
 Quando o participante desejar adicionar um novo campo ao *payload* de resposta, o atributo deverá receber o prefixo do participante seguido por um hífen `<PID>-`.
 
-Se um objeto estiver sendo adicionado ao *payload* de resposta, apenas o nome do objeto precisa receber o prefixo. Qualquer atributo dentro do novo objeto pode ser nomeado normalmente.
+Se um objeto for adicionado ao *payload* de resposta, apenas o nome do objeto precisará receber o prefixo. Qualquer atributo dentro do novo objeto poderá ser nomeado normalmente.
 
 <aside class="warning">
     <b>Importante:</b>
@@ -100,8 +100,8 @@ Quando for adicionado um novo parâmetro de *query* a um *endpoint* existente, o
 
 ### Filtro de Dados
 
-Opcionalmente, a entidade transmissora de dados poderá realizar filtro de dados através de *query* de entrada, baseado em campos que julgue relevante para a melhor experiência do cliente.	
-A informação de quais possibilidades estarão disponíveis (*query parameter*) deverá constar em documentação adicional disponibilizada pela entidade transmissora.	
+Opcionalmente, a entidade transmissora de dados poderá realizar filtro de dados através de *query* de entrada, baseado em campos que julgue relevantes para a melhor experiência do cliente.	
+As informações de quais possibilidades estarão disponíveis (*query parameter*) deverá constar em documentação adicional disponibilizada pela entidade transmissora.	
 
 ### Extensão do versionamento
 
