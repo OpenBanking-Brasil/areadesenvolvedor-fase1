@@ -1,25 +1,25 @@
-ï»¿Xpath;Nome ;DefiniÃ§Ã£o;Tipo do Dado;Tamanho;Mandatoriedade;Formato;DomÃ­nio;MÃ­nimo de OcorrÃªncias;MÃ¡ximo de OcorrÃªncias;RestriÃ§Ãµes;
-openBankingBrazil/<brand>/name;name;Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' Ã© em essÃªncia uma promessa da empresa em fornecer uma sÃ©rie especÃ­fica de atributos, benefÃ­cios e serviÃ§os uniformes aos clientes;Texto;80;ObrigatÃ³rio;\w*\W*;;1;1;NA;
-openBankingBrazil/<brand>/companies/;;Companies traz uma lista de todas as instituiÃ§Ãµes da Marca;Lista;;;;;1;N;;
-openBankingBrazil/<brand>/companies/name;name;Nome da InstituiÃ§Ã£o, pertencente Ã  marca, responsÃ¡vel pela comercializaÃ§Ã£o das modalidades de Financiamentos para Pessoas JurÃ­dicas consultadas. p.ex.'Empresa da OrganizaÃ§Ã£o A';Texto;80;ObrigatÃ³rio;\w*\W*;;1;1;NA;
-openBankingBrazil/<brand>/companies/cnpjNumber;cnpjNumber;"O responsÃ¡vel pela comercializaÃ§Ã£o das modalidades de Financiamentos - o CNPJ corresponde ao nÃºmero de inscriÃ§Ã£o no Cadastro de Pessoa JurÃ­dica. Deve-se ter apenas os nÃºmeros do CNPJ, sem mÃ¡scara
-";Texto;14;ObrigatÃ³rio;\d{14}|^NA$;NÃºmeros de 0 a 9;1;1;NA;
-openBankingBrazil/<brand>/companies/urlComplementaryList;urlComplementaryList;"URL do link que conterÃ¡ a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas caracterÃ­sticas para produtos e serviÃ§os.
-EndereÃ§o eletrÃ´nico de acesso ao canal. URLs sÃ£o limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, serÃ¡ adotado a metade deste tamanho. Ex. 'https://example.com/mobile-banking'
+Xpath	Nome 	Definição	Tipo do Dado	Tamanho	Mandatoriedade	Formato	Domínio	Mínimo de Ocorrências	Máximo de Ocorrências	Restrições
+openBankingBrazil/<brand>/name	name	Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes	Texto	80	Obrigatório	\w*\W*		1	1	NA
+openBankingBrazil/<brand>/companies/		Companies traz uma lista de todas as instituições da Marca	Lista					1	N	
+openBankingBrazil/<brand>/companies/name	name	Nome da Instituição, pertencente à marca, responsável pela comercialização das modalidades de Financiamentos para Pessoas Jurídicas consultadas. p.ex.'Empresa da Organização A'	Texto	80	Obrigatório	\w*\W*		1	1	NA
+openBankingBrazil/<brand>/companies/cnpjNumber	cnpjNumber	"O responsável pela comercialização das modalidades de Financiamentos - o CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara
+"	Texto	14	Obrigatório	\d{14}|^NA$	Números de 0 a 9	1	1	NA
+openBankingBrazil/<brand>/companies/urlComplementaryList	urlComplementaryList	"URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. Os contidos nessa lista possuem as mesmas características para produtos e serviços.
+Endereço eletrônico de acesso ao canal. URLs são limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, será adotado a metade deste tamanho. Ex. 'https://example.com/mobile-banking'
 
-";Texto;1024;Condicional;\w*\W*;;0;1;SerÃ¡ obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada;
-openBankingBrazil/<brand>/companies/businessFinancings/;;Lista de Modalidades de financiamentos ofertados;Lista;;;;;1;9;;
-openBankingBrazil/<brand>/companies/businessFinancings/type;type;"Modalidades de financiamentos ofertadas para pessoas jurÃ­dicas, conforme Circular 4015-Bacen. Segundo cartilha do Bacen: Financiamento Ã© um contrato entre o cliente e uma instituiÃ§Ã£o financeira, mas com, destinaÃ§Ã£o especÃ­fica como para a aquisiÃ§Ã£o de veÃ­culo ou de bem imÃ³vel, que funcionam como garantia para o crÃ©dito concedido. p. ex. financiamento imobiliÃ¡rio e de veÃ­culos. SÃ£o eles segundo descriÃ§Ãµes obtidas junto ao Documento 3040 do Bacen:
-financiamento-aquisiÃ§Ã£o de bens â€“ veÃ­culos automotores - Financiamentos a pessoas jurÃ­dicas vinculadas Ã  aquisiÃ§Ã£o de bens veÃ­culos automotores, que tenham o bem financiado alienado fiduciariamente como garantia da operaÃ§Ã£o
-financiamento-aquisiÃ§Ã£o de bens â€“ outros bens - destinados a financiar a aquisiÃ§Ã£o de bens, serviÃ§os, mÃ¡quinas e equipamentos, exceto veÃ­culos automotores
-financiamento-microcrÃ©dito - operaÃ§Ã£o de crÃ©dito realizada para financiamento de atividades produtivas de pessoas naturais ou jurÃ­dicas, organizadas de forma individual ou coletiva, com renda ou receita bruta anual de atÃ© R$200.000,00 (duzentos mil reais) 
-financiamento rural-custeio - financiamentos concedidos a produtores rurais para custeio, tanto agrÃ­colas quanto pecuÃ¡rios (destina-se a cobrir os gastos normais dos ciclos produtivos, como aquisiÃ§Ã£o de insumo);
-financiamento rural-investimento - financiamentos concedidos a produtores rurais para investimento, tanto agrÃ­colas quanto pecuÃ¡rios (aplicaÃ§Ãµes em bens ou serviÃ§os que serÃ£o utilizados por vÃ¡rios ciclos produtivos, como compra de mÃ¡quinas e equipamentos, construÃ§Ã£o e reforma de benfeitorias); 
-financiamento rural-comercializaÃ§Ã£o - financiamentos concedidos a produtores rurais para comercializaÃ§Ã£o, tanto agrÃ­colas quanto pecuÃ¡rios (destina-se Ã s despesas posteriores Ã  produÃ§Ã£o, como armazenagem, ou conversÃ£o em espÃ©cie dos tÃ­tulos de venda a prazo da produÃ§Ã£o);
-financiamento rural-industrializaÃ§Ã£o - financiamentos concedidos a produtores rurais para industrializaÃ§Ã£o, tanto agrÃ­colas quanto pecuÃ¡rios (destina-se Ã  industrializaÃ§Ã£o de produtos agropecuÃ¡rios por produtores ou suas cooperativas);
-financiamento imobiliÃ¡rio-Sistema Financeiro da HabitaÃ§Ã£o (SFH) - financiamento para aquisiÃ§Ã£o ou construÃ§Ã£o de unidades habitacionais enquadradas no Sistema Financeiro de HabitaÃ§Ã£o - SFH. O SFH foi criado pela Lei 4.380/64 e tem como caracterÃ­stica a regulamentaÃ§Ã£o das condiÃ§Ãµes de financiamento imobiliÃ¡rio, por exemplo, taxa de juros, quota, prazos. O Governo Federal pode intervir em qualquer um dos aspectos do financiamento. Nesse sistema estÃ£o incluÃ­das as operaÃ§Ãµes contratadas com recursos do SBPE e do FGTS, inclusive o PMCMV (Programa Minha Casa, Minha Vida). As operaÃ§Ãµes com recursos do FGTS observam, ainda, regulamentaÃ§Ã£o prÃ³pria. 
-financiamento imobiliÃ¡rio-Sistema Financeiro da HabitaÃ§Ã£o (SFI) - O SFI nÃ£o possui regulamentaÃ§Ã£o das condiÃ§Ãµes de financiamento, sendo estas definidas pelo Agentes Financeiros
-";Texto;;ObrigatÃ³rio;;"FINANCIAMENTO_AQUISICAO_BENS_VEICULOS_AUTOMOTORES
+"	Texto	1024	Condicional	\w*\W*		0	1	Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+openBankingBrazil/<brand>/companies/businessFinancings/		Lista de Modalidades de financiamentos ofertados	Lista					1	9	
+openBankingBrazil/<brand>/companies/businessFinancings/type	type	"Modalidades de financiamentos ofertadas para pessoas jurídicas, conforme Circular 4015-Bacen. Segundo cartilha do Bacen: Financiamento é um contrato entre o cliente e uma instituição financeira, mas com, destinação específica como para a aquisição de veículo ou de bem imóvel, que funcionam como garantia para o crédito concedido. p. ex. financiamento imobiliário e de veículos. São eles segundo descrições obtidas junto ao Documento 3040 do Bacen:
+financiamento-aquisição de bens – veículos automotores - Financiamentos a pessoas jurídicas vinculadas à aquisição de bens veículos automotores, que tenham o bem financiado alienado fiduciariamente como garantia da operação
+financiamento-aquisição de bens – outros bens - destinados a financiar a aquisição de bens, serviços, máquinas e equipamentos, exceto veículos automotores
+financiamento-microcrédito - operação de crédito realizada para financiamento de atividades produtivas de pessoas naturais ou jurídicas, organizadas de forma individual ou coletiva, com renda ou receita bruta anual de até R$200.000,00 (duzentos mil reais) 
+financiamento rural-custeio - financiamentos concedidos a produtores rurais para custeio, tanto agrícolas quanto pecuários (destina-se a cobrir os gastos normais dos ciclos produtivos, como aquisição de insumo);
+financiamento rural-investimento - financiamentos concedidos a produtores rurais para investimento, tanto agrícolas quanto pecuários (aplicações em bens ou serviços que serão utilizados por vários ciclos produtivos, como compra de máquinas e equipamentos, construção e reforma de benfeitorias); 
+financiamento rural-comercialização - financiamentos concedidos a produtores rurais para comercialização, tanto agrícolas quanto pecuários (destina-se às despesas posteriores à produção, como armazenagem, ou conversão em espécie dos títulos de venda a prazo da produção);
+financiamento rural-industrialização - financiamentos concedidos a produtores rurais para industrialização, tanto agrícolas quanto pecuários (destina-se à industrialização de produtos agropecuários por produtores ou suas cooperativas);
+financiamento imobiliário-Sistema Financeiro da Habitação (SFH) - financiamento para aquisição ou construção de unidades habitacionais enquadradas no Sistema Financeiro de Habitação - SFH. O SFH foi criado pela Lei 4.380/64 e tem como característica a regulamentação das condições de financiamento imobiliário, por exemplo, taxa de juros, quota, prazos. O Governo Federal pode intervir em qualquer um dos aspectos do financiamento. Nesse sistema estão incluídas as operações contratadas com recursos do SBPE e do FGTS, inclusive o PMCMV (Programa Minha Casa, Minha Vida). As operações com recursos do FGTS observam, ainda, regulamentação própria. 
+financiamento imobiliário-Sistema Financeiro da Habitação (SFI) - O SFI não possui regulamentação das condições de financiamento, sendo estas definidas pelo Agentes Financeiros
+"	Texto		Obrigatório		"FINANCIAMENTO_AQUISICAO_BENS_VEICULOS_AUTOMOTORES
 FINANCIAMENTO_AQUISICAO_BENS_OUTROS_BENS
 FINANCIAMENTO-MICROCREDITO
 FINANCIAMENTO_RURAL_CUSTEIO
@@ -36,34 +36,34 @@ FINANCIAMENTO_IMOBILIARIO_SISTEMA_FINANCEIRO_HABITACAO-SFI
 
 
 
-";1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/;;Objeto que reÃºne informaÃ§Ãµes de tarifas de serviÃ§os;Objeto;;;;;;;;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/services/;;Lista das Tarifas cobradas sobre ServiÃ§os;Lista;;;;;1;N;;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/services/name;name;Nomes das Tarifas cobradas sobre ServiÃ§os ofertados Ã  Modalidade de Financiamentos, para pessoa fÃ­sica. (Campo Livre). p.ex.  'AvaliaÃ§Ã£o de Garantia HipotecÃ¡ria, AvaliaÃ§Ã£o de Propriedade Rural e Parecer TÃ©cnico para ProrrogaÃ§Ã£o de OperaÃ§Ãµes Rurais';Texto;250;ObrigatÃ³rio;\w*\W*;;1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/services/code;code;Sigla de identificaÃ§Ã£o do serviÃ§o relacionado Ã  Modalidade de Financiamentos informada, para pessoa fÃ­sica.(Campo Livre). ;Texto;100;ObrigatÃ³rio;\w*\W*;;1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/services/chargingTriggerInfo;chargingTriggerInfo;"Fatos geradores de cobranÃ§a que incidem sobre as Modalidades de Financiamentos informada, para pessoa fÃ­sica. 
-(Campo Livre) ";Texto;2000;ObrigatÃ³rio;\w*\W*;;1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/services/prices/;;Lista distribuiÃ§Ã£o preÃ§os tarifas de serviÃ§os;Lista;;;;;4;4;;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/services/prices/interval;interval;Segundo Normativa nÂº 32, BCB, de 2020: DistribuiÃ§Ã£o de frequÃªncia relativa dos valores de tarifas cobradas dos clientes, de que trata o Â§ 2Âº do art. 3Âº da Circular nÂº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitaÃ§Ã£o dos valores sobre a mediana em cada uma dessas faixas. Informando: 1Âª faixa , 2Âª faixa, 3Âª faixa e 4Âª faixa;Texto;;ObrigatÃ³rio;;"1_FAIXA
+"	1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/fees/		Objeto que reúne informações de tarifas de serviços	Objeto							
+openBankingBrazil/<brand>/companies/businessFinancings/fees/services/		Lista das Tarifas cobradas sobre Serviços	Lista					1	N	
+openBankingBrazil/<brand>/companies/businessFinancings/fees/services/name	name	Nomes das Tarifas cobradas sobre Serviços ofertados à Modalidade de Financiamentos, para pessoa física. (Campo Livre). p.ex.  'Avaliação de Garantia Hipotecária, Avaliação de Propriedade Rural e Parecer Técnico para Prorrogação de Operações Rurais'	Texto	250	Obrigatório	\w*\W*		1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/fees/services/code	code	Sigla de identificação do serviço relacionado à Modalidade de Financiamentos informada, para pessoa física.(Campo Livre). 	Texto	100	Obrigatório	\w*\W*		1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/fees/services/chargingTriggerInfo	chargingTriggerInfo	"Fatos geradores de cobrança que incidem sobre as Modalidades de Financiamentos informada, para pessoa física. 
+(Campo Livre) "	Texto	2000	Obrigatório	\w*\W*		1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/fees/services/prices/		Lista distribuição preços tarifas de serviços	Lista					4	4	
+openBankingBrazil/<brand>/companies/businessFinancings/fees/services/prices/interval	interval	Segundo Normativa nº 32, BCB, de 2020: Distribuição de frequência relativa dos valores de tarifas cobradas dos clientes, de que trata o § 2º do art. 3º da Circular nº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitação dos valores sobre a mediana em cada uma dessas faixas. Informando: 1ª faixa , 2ª faixa, 3ª faixa e 4ª faixa	Texto		Obrigatório		"1_FAIXA
 2_FAIXA
 3_FAIXA
-4_FAIXA";1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/services/prices/value;value;"Valor da mediana de cada faixa relativa ao serviÃ§o ofertado, informado no perÃ­odo, conforme Res nÂº 32 BCB, 2020. p.ex. '45.00'
-(representa um valor monetÃ¡rio. p.ex: 1547368.92. Este valor, considerando que a moeda seja BRL, significa R$ 1.547.368,92. O Ãºnico separador presente deve ser o '.' (ponto) para indicar a casa decimal. NÃ£o deve haver separador de milhar)";Texto;12;ObrigatÃ³rio;^((\d{1,9}\.\d{2}){1}|NA)$;;1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/services/prices/currency;currency;Moeda referente ao valor da Tarifa, segundo modelo ISO-4217. p.ex. 'BRL' ;Texto;3;ObrigatÃ³rio;;moeda (ISO-4217);1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/services/prices/customers/rate;rate;"Percentual dos clientes de cada faixa relativa ao serviÃ§o ofertado, para pessoa natural informado no perÃ­odo, conforme Res nÂº32, BCB, 2020. p.ex. '0.1500'
+4_FAIXA"	1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/fees/services/prices/value	value	"Valor da mediana de cada faixa relativa ao serviço ofertado, informado no período, conforme Res nº 32 BCB, 2020. p.ex. '45.00'
+(representa um valor monetário. p.ex: 1547368.92. Este valor, considerando que a moeda seja BRL, significa R$ 1.547.368,92. O único separador presente deve ser o '.' (ponto) para indicar a casa decimal. Não deve haver separador de milhar)"	Texto	12	Obrigatório	^((\d{1,9}\.\d{2}){1}|NA)$		1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/fees/services/prices/currency	currency	Moeda referente ao valor da Tarifa, segundo modelo ISO-4217. p.ex. 'BRL' 	Texto	3	Obrigatório		moeda (ISO-4217)	1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/fees/services/prices/customers/rate	rate	"Percentual dos clientes de cada faixa relativa ao serviço ofertado, para pessoa natural informado no período, conforme Res nº32, BCB, 2020. p.ex. '0.1500'
 (representa uma porcentagem Ex: 0.15 (O valor ao lado representa 15%. O valor '1 'representa 100%)
-A apuraÃ§Ã£o pode acontecer com atÃ© 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
-(representaÃ§Ã£o de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)";Texto;6;ObrigatÃ³rio;"(^[0-9](\.[0-9]{4})$|^NA$)
-";;1;1;A precisÃ£o da apuraÃ§Ã£o pode prever atÃ© 4 casas decimais ;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/services/minimum/value;value;Valor mÃ­nimo apurado para a tarifa de serviÃ§os sobre a base de clientes no mÃªs de referÃªncia;Texto;12;ObrigatÃ³rio;^((\d{1,9}\.\d{2}){1}|NA)$;;1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/services/minimum/currency;currency;Moeda referente ao valor mÃ­nimo da Tarifa, segundo modelo ISO-4217. p.ex.'BRL' ;Texto;3;ObrigatÃ³rio;;moeda (ISO-4217);1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/services/maximum/value;value;Valor mÃ¡ximo apurado para a tarifa de serviÃ§os sobre a base de clientes no mÃªs de referÃªncia;Texto;12;ObrigatÃ³rio;^((\d{1,9}\.\d{2}){1}|NA)$;;1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/fees/services/maximum/currency;currency;Moeda referente ao valor mÃ­nimo da Tarifa, segundo modelo ISO-4217. p.ex.'BRL' ;Texto;3;ObrigatÃ³rio;;moeda (ISO-4217);1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/interestRates/;;Lista que traz o conjunto de informaÃ§Ãµes necessÃ¡rias para demonstrar a distribuiÃ§Ã£o de frequÃªncias das taxas de juros remuneratÃ³rios da Modalidade de crÃ©dito ;Lista;;;;;1;N;;
+A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)"	Texto	6	Obrigatório	"(^[0-9](\.[0-9]{4})$|^NA$)
+"		1	1	A precisão da apuração pode prever até 4 casas decimais 
+openBankingBrazil/<brand>/companies/businessFinancings/fees/services/minimum/value	value	Valor mínimo apurado para a tarifa de serviços sobre a base de clientes no mês de referência	Texto	12	Obrigatório	^((\d{1,9}\.\d{2}){1}|NA)$		1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/fees/services/minimum/currency	currency	Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217. p.ex.'BRL' 	Texto	3	Obrigatório		moeda (ISO-4217)	1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/fees/services/maximum/value	value	Valor máximo apurado para a tarifa de serviços sobre a base de clientes no mês de referência	Texto	12	Obrigatório	^((\d{1,9}\.\d{2}){1}|NA)$		1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/fees/services/maximum/currency	currency	Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217. p.ex.'BRL' 	Texto	3	Obrigatório		moeda (ISO-4217)	1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/interestRates/		Lista que traz o conjunto de informações necessárias para demonstrar a distribuição de frequências das taxas de juros remuneratórios da Modalidade de crédito 	Lista					1	N	
 "openBankingBrazil/<brand>/companies/businessFinancings/interestRates/referential
-RateIndexer";"referential
-RateIndexer";Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040;Texto;;ObrigatÃ³rio;;"SEM_INDEXADOR_TAXA
+RateIndexer"	"referential
+RateIndexer"	Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040	Texto		Obrigatório		"SEM_INDEXADOR_TAXA
 PRE_FIXADO
 POS_FIXADO_TR_TBF
 POS_FIXADO_TJLP
@@ -81,49 +81,49 @@ CREDITO_RURAL_TCR_PRE
 CREDITO_RURAL_TCR_POS
 CREDITO_RURAL_TRFC_PRE
 CREDITO_RURAL_TRFC_POS
-OUTROS_INDEXADORES";1;1;;
-openBankingBrazil/<brand>/companies/businessFinancings/interestRates/rate;rate;"Percentual do Ã­ndice ou da taxa referencial que incide sobre a composiÃ§Ã£o das taxas de juros remuneratÃ³rios. 
+OUTROS_INDEXADORES"	1	1	
+openBankingBrazil/<brand>/companies/businessFinancings/interestRates/rate	rate	"Percentual do índice ou da taxa referencial que incide sobre a composição das taxas de juros remuneratórios. 
 (representa uma porcentagem Ex: 0.15 (O valor ao lado representa 15%. O valor '1 'representa 100%)
-A apuraÃ§Ã£o pode acontecer com atÃ© 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
-(representaÃ§Ã£o de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)";Texto;4;ObrigatÃ³rio;"^((\d{1,9}\.\d{2}){1}|NA)$
-";;1;1;;
-openBankingBrazil/<brand>/companies/businessFinancings/interestRates/applications/;;Lista  das faixas de cobranÃ§a da taxa efetiva aplicada pela contrataÃ§Ã£o do crÃ©dito;Lista;;;;;4;4;;
-openBankingBrazil/<brand>/companies/businessFinancings/interestRates/applications/interval;interval;Faixas para cobranÃ§a da taxa efetiva aplicada pela contrataÃ§Ã£o do crÃ©dito, no intervalo informado: 1Âª faixa, 2Âª faixa, 3Âª faixa e 4Âª faixa. Segundo Normativa nÂº32 de 2020: 'DistribuiÃ§Ã£o de frequÃªncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o Â§ 2Âº do art. 3Âº da Circular nÂº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitaÃ§Ã£o dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas. ;Texto;;ObrigatÃ³rio;;"1_FAIXA
+A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)"	Texto	4	Obrigatório	"^((\d{1,9}\.\d{2}){1}|NA)$
+"		1	1	
+openBankingBrazil/<brand>/companies/businessFinancings/interestRates/applications/		Lista  das faixas de cobrança da taxa nominal mensal aplicada pela contratação do crédito	Lista					4	4	
+openBankingBrazil/<brand>/companies/businessFinancings/interestRates/applications/interval	interval	Faixas para cobrança da taxa nominal mensal aplicada pela contratação do crédito, no intervalo informado: 1ª faixa, 2ª faixa, 3ª faixa e 4ª faixa. Segundo Normativa nº32 de 2020: 'Distribuição de frequência relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o § 2º do art. 3º da Circular nº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitação dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas. 	Texto		Obrigatório		"1_FAIXA
 2_FAIXA
 3_FAIXA
-4_FAIXA";1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/interestRates/applications/indexer/rate;rate;"Percentual que corresponde a mediana da taxa efetiva cobrada do cliente pela contrataÃ§Ã£o do crÃ©dito, no intervalo informado. p.ex. '0,8700%'
-A apuraÃ§Ã£o pode acontecer com atÃ© 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
-(representaÃ§Ã£o de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)";Texto;6;ObrigatÃ³rio;"(^[0-9](\.[0-9]{4})$|^NA$)
-";;1;1;A precisÃ£o da apuraÃ§Ã£o pode prever atÃ© 4 casas decimais ;
-openBankingBrazil/<brand>/companies/businessFinancings/interestRates/applications/customers/rate;rate;"Percentual de clientes nas faixas apurada. p.ex. p.ex. '0,8700'
-A apuraÃ§Ã£o pode acontecer com atÃ© 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
-(representaÃ§Ã£o de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)";Texto;6;ObrigatÃ³rio;"(^[0-9](\.[0-9]{4})$|^NA$)
-";;1;1;A precisÃ£o da apuraÃ§Ã£o pode prever atÃ© 4 casas decimais ;
-openBankingBrazil/<brand>/companies/businessFinancings/interestRates/minimumRate;minimumRate;"Percentual mÃ­nimo cobrado (taxa efetiva) no mÃªs de referÃªncia, para o crÃ©dito contratado 
-A apuraÃ§Ã£o pode acontecer com atÃ© 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
-(representaÃ§Ã£o de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)";Texto;6;ObrigatÃ³rio;"(^[0-9](\.[0-9]{4})$|^NA$)
-Corrigir: deve trazer formato decimal: 1 casa antes do ponto e 4 casas decimais, permitindo ser preenchida com NA";;1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/interestRates/maximumRate;maximumRate;"Percentual mÃ¡ximo cobrado (taxa efetiva) no mÃªs de referÃªncia, para o crÃ©dito contratado 
-A apuraÃ§Ã£o pode acontecer com atÃ© 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
-(representaÃ§Ã£o de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)";Texto;6;ObrigatÃ³rio;"(^[0-9](\.[0-9]{4})$|^NA$)
-Corrigir: deve trazer formato decimal: 1 casa antes do ponto e 4 casas decimais, permitindo ser preenchida com NA";;1;1;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/requiredWarranties;requiredWarranties;"Listas das garantias exigidas, segundo documento 3040 do Bacen:  
--cessÃ£o de direitos creditÃ³rios: o cedente transfere ao credor/cessionÃ¡rio a titularidade de direitos creditÃ³rios, atÃ© a liquidaÃ§Ã£o da dÃ­vida. O credor/cessionÃ¡rio passa a recebÃª-los diretamente dos devedores e credita o produto da operaÃ§Ã£o para o cedente na operaÃ§Ã£o que originou a cessÃ£o, atÃ© a sua liquidaÃ§Ã£o 
--cauÃ§Ã£o: garantia instituÃ­da sobre crÃ©ditos do garantidor 
--penhor: direito real que consiste na tradiÃ§Ã£o de uma coisa mÃ³vel ou mobilizÃ¡vel, suscetÃ­vel de alienaÃ§Ã£o, realizada pelo devedor ou por terceiro ao credor, a fim de garantir o pagamento do dÃ©bito 
--alienaÃ§Ã£o fiduciÃ¡ria: transferÃªncia ao credor, ou fiduciÃ¡rio, da propriedade do bem 
--hipoteca: direito real de garantia que afeta um bem imÃ³vel para o cumprimento da obrigaÃ§Ã£o 
--operaÃ§Ãµes garantidas pelo governo: nas instÃ¢ncias federal, estadual ou municipal
--outras garantias nÃ£o fidejussÃ³rias: as garantias reais nÃ£o descritas como: cessÃ£o de direitos creditÃ³rios, cauÃ§Ã£o, penhor, alienaÃ§Ã£o fiduciÃ¡ria, hipoteca ou operaÃ§Ã£o garantida pelo governo 
--seguros e assemelhados: os seguros (e assemelhados) contratados para garantir o pagamento da operaÃ§Ã£o em circunstÃ¢ncias adversas
--garantia fidejussÃ³ria: baseada na fidelidade do garantidor em cumprir as obrigaÃ§Ãµes, caso o devedor nÃ£o o faÃ§a
+4_FAIXA"	1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/interestRates/applications/indexer/rate	rate	"Percentual que corresponde a mediana da taxa nominal mensal cobrada do cliente pela contratação do crédito, no intervalo informado. p.ex. '0,8700%'
+A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)"	Texto	6	Obrigatório	"(^[0-9](\.[0-9]{4})$|^NA$)
+"		1	1	A precisão da apuração pode prever até 4 casas decimais 
+openBankingBrazil/<brand>/companies/businessFinancings/interestRates/applications/customers/rate	rate	"Percentual de clientes nas faixas apurada. p.ex. p.ex. '0,8700'
+A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)"	Texto	6	Obrigatório	"(^[0-9](\.[0-9]{4})$|^NA$)
+"		1	1	A precisão da apuração pode prever até 4 casas decimais 
+openBankingBrazil/<brand>/companies/businessFinancings/interestRates/minimumRate	minimumRate	"Percentual mínimo cobrado (taxa nominal mensal) no mês de referência, para o crédito contratado 
+A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)"	Texto	6	Obrigatório	"(^[0-9](\.[0-9]{4})$|^NA$)
+Corrigir: deve trazer formato decimal: 1 casa antes do ponto e 4 casas decimais, permitindo ser preenchida com NA"		1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/interestRates/maximumRate	maximumRate	"Percentual máximo cobrado (taxa nominal mensal) no mês de referência, para o crédito contratado 
+A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)"	Texto	6	Obrigatório	"(^[0-9](\.[0-9]{4})$|^NA$)
+Corrigir: deve trazer formato decimal: 1 casa antes do ponto e 4 casas decimais, permitindo ser preenchida com NA"		1	1	NA
+openBankingBrazil/<brand>/companies/businessFinancings/requiredWarranties	requiredWarranties	"Listas das garantias exigidas, segundo documento 3040 do Bacen:  
+-cessão de direitos creditórios: o cedente transfere ao credor/cessionário a titularidade de direitos creditórios, até a liquidação da dívida. O credor/cessionário passa a recebê-los diretamente dos devedores e credita o produto da operação para o cedente na operação que originou a cessão, até a sua liquidação 
+-caução: garantia instituída sobre créditos do garantidor 
+-penhor: direito real que consiste na tradição de uma coisa móvel ou mobilizável, suscetível de alienação, realizada pelo devedor ou por terceiro ao credor, a fim de garantir o pagamento do débito 
+-alienação fiduciária: transferência ao credor, ou fiduciário, da propriedade do bem 
+-hipoteca: direito real de garantia que afeta um bem imóvel para o cumprimento da obrigação 
+-operações garantidas pelo governo: nas instâncias federal, estadual ou municipal
+-outras garantias não fidejussórias: as garantias reais não descritas como: cessão de direitos creditórios, caução, penhor, alienação fiduciária, hipoteca ou operação garantida pelo governo 
+-seguros e assemelhados: os seguros (e assemelhados) contratados para garantir o pagamento da operação em circunstâncias adversas
+-garantia fidejussória: baseada na fidelidade do garantidor em cumprir as obrigações, caso o devedor não o faça
 -bens arrendados: bem objeto do arrendamento financeiro
--garantias internacionais: declarar se a garantia Ã© mitigadora ou nÃ£o, observados os critÃ©rios definidos pela Circular 3.644, de 4 de marÃ§o de 2013 
--operaÃ§Ãµes garantidas por outras entidade: declarar as garantias prestadas pelas entidades descritas no item 3. InformaÃ§Ãµes de Garantias (i) do documento 3040 - Bacen 
--acordos de compensaÃ§Ã£o: operaÃ§Ãµes que sejam abrangidas por acordos para a compensaÃ§Ã£o e liquidaÃ§Ã£o de obrigaÃ§Ãµes no Ã¢mbito do SFN, nos termos da ResoluÃ§Ã£o 3.263, de 24 de fevereiro de 2005
--nÃ£o aplicÃ¡vel
-";Texto;;ObrigatÃ³rio;;"CESSAO_DIREITOS_CREDITORIOS
+-garantias internacionais: declarar se a garantia é mitigadora ou não, observados os critérios definidos pela Circular 3.644, de 4 de março de 2013 
+-operações garantidas por outras entidade: declarar as garantias prestadas pelas entidades descritas no item 3. Informações de Garantias (i) do documento 3040 - Bacen 
+-acordos de compensação: operações que sejam abrangidas por acordos para a compensação e liquidação de obrigações no âmbito do SFN, nos termos da Resolução 3.263, de 24 de fevereiro de 2005
+-não aplicável
+"	Texto		Obrigatório		"CESSAO_DIREITOS_CREDITORIOS
 CAUCAO
 PENHOR
 ALIENACAO_FIDUCIARIA
@@ -137,11 +137,5 @@ GARANTIAS_INTERNACIONAIS
 OPERACOES_GARANTIDAS_OUTRAS_ENTIDADES
 ACORDOS_COMPENSACAO
 NAO_APLICAVEL
-";1;14;NA;
-openBankingBrazil/<brand>/companies/businessFinancings/termsConditions;termsConditions;Campo aberto para informar as condiÃ§Ãµes contratuais relativas Ã  Modalidade de Financiamentos para pessoa jurÃ­dica informada. Pode ser informada a URL referente ao endereÃ§o onde constam as condiÃ§Ãµes informadas. EndereÃ§o eletrÃ´nico de acesso ao canal. ;Texto;2000;ObrigatÃ³rio;\w*\W*;;1;1;NA;
-;;;;;;;;;;;
-;;;;;;;;;;;
-;;;;;;;;;;;
-;;;;;;;;;;;
-;;;;;;;;;;;
-;;;;;;;;;;;
+"	1	14	NA
+openBankingBrazil/<brand>/companies/businessFinancings/termsConditions	termsConditions	Campo aberto para informar as condições contratuais relativas à Modalidade de Financiamentos para pessoa jurídica informada. Pode ser informada a URL referente ao endereço onde constam as condições informadas. Endereço eletrônico de acesso ao canal. 	Texto	2000	Obrigatório	\w*\W*		1	1	NA
