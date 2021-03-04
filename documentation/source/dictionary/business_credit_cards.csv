@@ -1,17 +1,17 @@
-"Xpath	Nome	Definição	Tipo do Dado	Tamanho	Mandatoriedade	Formato	Domínio	Mínimo de Ocorrências	Máximo de Ocorrências	Restrições"
-"openBankingBrazil/<brand>/name	name	Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes	Texto	80	Obrigatório	\w*\W*		1	1	NA"
-"openBankingBrazil/<brand>/companies/		Companies traz uma lista de todas as instituições da Marca	Lista					1	N	"
-"openBankingBrazil/<brand>/companies/name	name	Nome da Instituição, pertencente à marca, responsável pela modalidade de Conta de Pagamento Pós Paga (Cartão)  para Pessoa Jurídica. p.ex.'Empresa da Organização A'	Texto	80	Obrigatório	\w*\W*		1	1	NA"
-"openBankingBrazil/<brand>/companies/cnpjNumber	cnpjNumber	""Número completo do CNPJ da instituição. O CNPJ corresponde ao número de inscrição no Cadastro de Pessoa Jurídica. Deve-se ter apenas os números do CNPJ, sem máscara"
-"	Texto	14	Obrigatório	^(\d{14})$	Números de 0 a 9	1	1	NA
-openBankingBrazil/<brand>/companies/urlComplementaryList	urlComplementaryList	URL de link para lista complementar com os nomes e CNPJs agrupados para o caso instituições ofertantes de produtos e serviços com as mesmas características. URL do link que conterá a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. "
-Endereço eletrônico de acesso ao canal. URLs são limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, será adotado a metade deste tamanho. Ex. 'https://example.com/mobile-banking'
+"Xpath	Nome	DefiniÃ§Ã£o	Tipo do Dado	Tamanho	Mandatoriedade	Formato	DomÃ­nio	MÃ­nimo de OcorrÃªncias	MÃ¡ximo de OcorrÃªncias	RestriÃ§Ãµes"
+"openBankingBrazil/<brand>/name	name	Nome da Marca reportada pelo participante do Open Banking. O conceito a que se refere a 'marca' Ã© em essÃªncia uma promessa da empresa em fornecer uma sÃ©rie especÃ­fica de atributos, benefÃ­cios e serviÃ§os uniformes aos clientes	Texto	80	ObrigatÃ³rio	\w*\W*		1	1	NA"
+"openBankingBrazil/<brand>/companies/		Companies traz uma lista de todas as instituiÃ§Ãµes da Marca	Lista					1	N	"
+"openBankingBrazil/<brand>/companies/name	name	Nome da InstituiÃ§Ã£o, pertencente Ã  marca, responsÃ¡vel pela modalidade de Conta de Pagamento PÃ³s Paga (CartÃ£o)  para Pessoa JurÃ­dica. p.ex.'Empresa da OrganizaÃ§Ã£o A'	Texto	80	ObrigatÃ³rio	\w*\W*		1	1	NA"
+"openBankingBrazil/<brand>/companies/cnpjNumber	cnpjNumber	""NÃºmero completo do CNPJ da instituiÃ§Ã£o. O CNPJ corresponde ao nÃºmero de inscriÃ§Ã£o no Cadastro de Pessoa JurÃ­dica. Deve-se ter apenas os nÃºmeros do CNPJ, sem mÃ¡scara"
+"	Texto	14	ObrigatÃ³rio	^(\d{14})$	NÃºmeros de 0 a 9	1	1	NA
+openBankingBrazil/<brand>/companies/urlComplementaryList	urlComplementaryList	URL de link para lista complementar com os nomes e CNPJs agrupados para o caso instituiÃ§Ãµes ofertantes de produtos e serviÃ§os com as mesmas caracterÃ­sticas. URL do link que conterÃ¡ a lista complementar com os nomes e CNPJs agrupados sob o mesmo cnpjNumber. "
+EndereÃ§o eletrÃ´nico de acesso ao canal. URLs sÃ£o limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, serÃ¡ adotado a metade deste tamanho. Ex. 'https://example.com/mobile-banking'
 
-"	Texto	1024	Condicional	\w*\W*		0	1	Será obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
-openBankingBrazil/<brand>/companies/businessCreditCards/		Lista das contas de pagamento pós-paga	Lista					1	N	
-openBankingBrazil/<brand>/companies/businessCreditCards/name	name	Denominação/Identificação do nome da conta de pagamento pós-paga (cartão).Conforme CIRCULAR Nº 3.680,BCB, 2013: 'conta de pagamento pós-paga: destinada à execução de transações de pagamento que independem do aporte prévio de recursos' p.ex. 'Cartão Universitário Bem-Vindo'	Texto	50	Obrigatório	\w*\W*		1	1	NA
-openBankingBrazil/<brand>/companies/businessCreditCards/identification/product/type	type	Categoria atribuída a um cartão de pagamento, sob uma certa denominação, que lhe agrega um conjunto de vantagens, diferenciando-o de acordo com o perfil do portador. p.ex. 'Classic Nacional', 'Classic Internacional'"
-"Essa categoria é definida pelo BACEN e está contida no documento de nome 'Elaboração e Remessa de Informações Relativas aos Cartões de Pagamento Emissores'""	Texto		Obrigatório		""CLASSIC_NACIONAL"
+"	Texto	1024	Condicional	\w*\W*		0	1	SerÃ¡ obrigatoriamente preenchido se houver lista complementar com os nomes e CNPJs a ser disponibilizada
+openBankingBrazil/<brand>/companies/businessCreditCards/		Lista das contas de pagamento pÃ³s-paga	Lista					1	N	
+openBankingBrazil/<brand>/companies/businessCreditCards/name	name	DenominaÃ§Ã£o/IdentificaÃ§Ã£o do nome da conta de pagamento pÃ³s-paga (cartÃ£o).Conforme CIRCULAR NÂº 3.680,BCB, 2013: 'conta de pagamento pÃ³s-paga: destinada Ã  execuÃ§Ã£o de transaÃ§Ãµes de pagamento que independem do aporte prÃ©vio de recursos' p.ex. 'CartÃ£o UniversitÃ¡rio Bem-Vindo'	Texto	50	ObrigatÃ³rio	\w*\W*		1	1	NA
+openBankingBrazil/<brand>/companies/businessCreditCards/identification/product/type	type	Categoria atribuÃ­da a um cartÃ£o de pagamento, sob uma certa denominaÃ§Ã£o, que lhe agrega um conjunto de vantagens, diferenciando-o de acordo com o perfil do portador. p.ex. 'Classic Nacional', 'Classic Internacional'"
+"Essa categoria Ã© definida pelo BACEN e estÃ¡ contida no documento de nome 'ElaboraÃ§Ã£o e Remessa de InformaÃ§Ãµes Relativas aos CartÃµes de Pagamento Emissores'""	Texto		ObrigatÃ³rio		""CLASSIC_NACIONAL"
 CLASSIC_INTERNACIONAL
 GOLD
 PLATINUM
@@ -33,11 +33,11 @@ EMPRESARIAL
 COMPRAS
 OUTROS
 "	1	1	NA
-openBankingBrazil/<brand>/companies/businessCreditCards/identification/product/additionalInfo	additionalInfo	Informações complementares se tipo de Cartão 'OUTROS'	Texto	50	Condicional	\w*\W*		0	1	Campo deve ser obrigatoriamente preenchido se selecionado 'OUTROS'"
+openBankingBrazil/<brand>/companies/businessCreditCards/identification/product/additionalInfo	additionalInfo	InformaÃ§Ãµes complementares se tipo de CartÃ£o 'OUTROS'	Texto	50	Condicional	\w*\W*		0	1	Campo deve ser obrigatoriamente preenchido se selecionado 'OUTROS'"
 "
-openBankingBrazil/<brand>/companies/businessCreditCards/identification/creditCard/network	network	Categoria de Bandeiras de Cartões de Crédito (Instituidor do arranjo de pagamento)."
-"Bandeira é a detentora de todos os direitos e deveres da utilização da marca estampada no cartão, inclusive as bandeiras pertencentes aos emissores. p.ex. """"American Express"""", """"Diners Club"""""
-"Essas bandeiras estão definidas em documento do BACEN de nome """"Elaboração e Remessa de Informações Relativas aos Cartões de Pagamento  Emissores""""""	Texto		Obrigatório		""VISA "
+openBankingBrazil/<brand>/companies/businessCreditCards/identification/creditCard/network	network	Categoria de Bandeiras de CartÃµes de CrÃ©dito (Instituidor do arranjo de pagamento)."
+"Bandeira Ã© a detentora de todos os direitos e deveres da utilizaÃ§Ã£o da marca estampada no cartÃ£o, inclusive as bandeiras pertencentes aos emissores. p.ex. """"American Express"""", """"Diners Club"""""
+"Essas bandeiras estÃ£o definidas em documento do BACEN de nome """"ElaboraÃ§Ã£o e Remessa de InformaÃ§Ãµes Relativas aos CartÃµes de Pagamento  Emissores""""""	Texto		ObrigatÃ³rio		""VISA "
 MASTERCARD 
 AMERICAN_EXPRESS 
 DINERS_CLUB 
@@ -46,15 +46,15 @@ BANDEIRA_PROPRIA
 CHEQUE_ELETRONICO 
 ELO 
 "OUTRAS""	1	1	NA"
-"openBankingBrazil/<brand>/companies/businessCreditCards/identification/creditCard/additionalInfo	additionalInfo	Texto livre para especificar categoria de bandeira marcada como 'OUTRAS'	Texto	50	Condicional	\w*\W*		0	1	Se no campo 'creditCardNetwork' vier selecionado o campo 'OUTRAS' é mandatório que esteja preenchido o 'additonalInfo' com o nome da bandeira"
-"openBankingBrazil/<brand>/companies/businessCreditCards/rewardsProgram/hasRewardProgram	hasRewardProgram	""Indicador da existência de programa de fidelidade/recompensa associado à conta de pagamento pós-paga (cartão)"
+"openBankingBrazil/<brand>/companies/businessCreditCards/identification/creditCard/additionalInfo	additionalInfo	Texto livre para especificar categoria de bandeira marcada como 'OUTRAS'	Texto	50	Condicional	\w*\W*		0	1	Se no campo 'creditCardNetwork' vier selecionado o campo 'OUTRAS' Ã© mandatÃ³rio que esteja preenchido o 'additonalInfo' com o nome da bandeira"
+"openBankingBrazil/<brand>/companies/businessCreditCards/rewardsProgram/hasRewardProgram	hasRewardProgram	""Indicador da existÃªncia de programa de fidelidade/recompensa associado Ã  conta de pagamento pÃ³s-paga (cartÃ£o)"
  true
-"false""	Booleano		Obrigatório		""true"
+"false""	Booleano		ObrigatÃ³rio		""true"
 "false""	1	1	NA"
-"openBankingBrazil/<brand>/companies/businessCreditCards/rewardsProgram/rewardProgramInfo	rewardProgramInfo	Informações de Termos e condições do programa de fidelidade/recompensa. Pode ser informada a URL referente ao endereço onde constam as condições informadas. URLs são limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, será adotado a metade deste tamanho. p.ex. 'https://example.com/mobile-banking'	Texto	2000	Condicional	\w*\W*		0	1	""Caso o campo """"hasRewardProgram""""  indique que há programa de recompensa (VERDADEIRO), a informação de termos e condições deve ser preenchida"""
-"openBankingBrazil/<brand>/companies/businessCreditCards/fees/		Objeto que reúne informações de tarifas de serviços	Objeto							"
-"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/		Lista das Tarifas cobradas sobre Serviço relacionadas a Modalidade de Pagamento Pós-Pagas	Lista					1	9	"
-"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/name	name	Lista de denominação de Serviços relacionados à Modalidade de Contas de Pagamento Pós-Pagas, para pessoa jurídica (Vide Enum)	Texto		Obrigatório		""ANUIDADE_CARTAO_BASICO_NACIONAL"
+"openBankingBrazil/<brand>/companies/businessCreditCards/rewardsProgram/rewardProgramInfo	rewardProgramInfo	InformaÃ§Ãµes de Termos e condiÃ§Ãµes do programa de fidelidade/recompensa. Pode ser informada a URL referente ao endereÃ§o onde constam as condiÃ§Ãµes informadas. URLs sÃ£o limitadas a 2048 caracteres mas, para o contexto do Sistema Financeiro aberto, serÃ¡ adotado a metade deste tamanho. p.ex. 'https://example.com/mobile-banking'	Texto	2000	Condicional	\w*\W*		0	1	""Caso o campo """"hasRewardProgram""""  indique que hÃ¡ programa de recompensa (VERDADEIRO), a informaÃ§Ã£o de termos e condiÃ§Ãµes deve ser preenchida"""
+"openBankingBrazil/<brand>/companies/businessCreditCards/fees/		Objeto que reÃºne informaÃ§Ãµes de tarifas de serviÃ§os	Objeto							"
+"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/		Lista das Tarifas cobradas sobre ServiÃ§o relacionadas a Modalidade de Pagamento PÃ³s-Pagas	Lista					1	9	"
+"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/name	name	Lista de denominaÃ§Ã£o de ServiÃ§os relacionados Ã  Modalidade de Contas de Pagamento PÃ³s-Pagas, para pessoa jurÃ­dica (Vide Enum)	Texto		ObrigatÃ³rio		""ANUIDADE_CARTAO_BASICO_NACIONAL"
 ANUIDADE_CARTAO_BASICO_INTERNACIONAL
 ANUIDADE_DIFERENCIADA
 UTILIZACAO_CANAIS_ATENDIMENTO_RETIRADA_ESPECIE_BRASIL
@@ -63,8 +63,8 @@ AVALIACAO_EMERGENCIAL_CREDITO
 FORNECIMENTO_SEGUNDA_VIA_FUNCAO_CREDITO 
 PAGAMENTO_CONTAS_UTILIZANDO_FUNCAO_CREDITO
 "SMS""	1	1	NA"
-"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/code	code	""Sigla de identificação do Serviço relacionado à Modalidade de Contas de Pagamento Pós-Pagas para pessoa jurídica informada. (Vide Enum)"
-"	Texto		Obrigatório		ANUIDADE_NACIONAL"
+"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/code	code	""Sigla de identificaÃ§Ã£o do ServiÃ§o relacionado Ã  Modalidade de Contas de Pagamento PÃ³s-Pagas para pessoa jurÃ­dica informada. (Vide Enum)"
+"	Texto		ObrigatÃ³rio		ANUIDADE_NACIONAL"
 ANUIDADE_INTERNACIONAL
 ANUIDADE_DIFERENCIADA
 SAQUE_CARTAO_BRASIL
@@ -73,26 +73,26 @@ AVALIACAO_EMERGENCIAL_CREDITO
 EMISSAO_SEGUNDA_VIA
 TARIFA_PAGAMENTO_CONTAS
 "SMS""	1	1	NA"
-"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/chargingTriggerInfo	chargingTriggerInfo	Fatos geradores de cobrança que incidem sobre as Modalidades de  Contas de Pagamento Pós-Pagas informada, para pessoa jurídica. Conforme serviços prioritários previstos na resolução 3919. 	Texto	2000	Obrigatório	\w*\W*		1	1	NA"
-"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/prices/		Lista distribuição preços tarifas de serviços	Lista					4	4	"
-"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/prices/interval	interval	Segundo Normativa nº 32, BCB, de 2020: Distribuição de frequência relativa dos valores de tarifas cobradas dos clientes, de que trata o § 2º do art. 3º da Circular nº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitação dos valores sobre a mediana em cada uma dessas faixas. Informando: 1ª faixa, 2ª faixa, 3ª faixa  e 4ª faixa	Texto		Obrigatório		""1_FAIXA "
+"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/chargingTriggerInfo	chargingTriggerInfo	Fatos geradores de cobranÃ§a que incidem sobre as Modalidades de  Contas de Pagamento PÃ³s-Pagas informada, para pessoa jurÃ­dica. Conforme serviÃ§os prioritÃ¡rios previstos na resoluÃ§Ã£o 3919. 	Texto	2000	ObrigatÃ³rio	\w*\W*		1	1	NA"
+"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/prices/		Lista distribuiÃ§Ã£o preÃ§os tarifas de serviÃ§os	Lista					4	4	"
+"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/prices/interval	interval	Segundo Normativa nÂº 32, BCB, de 2020: DistribuiÃ§Ã£o de frequÃªncia relativa dos valores de tarifas cobradas dos clientes, de que trata o Â§ 2Âº do art. 3Âº da Circular nÂº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitaÃ§Ã£o dos valores sobre a mediana em cada uma dessas faixas. Informando: 1Âª faixa, 2Âª faixa, 3Âª faixa  e 4Âª faixa	Texto		ObrigatÃ³rio		""1_FAIXA "
 2_FAIXA 
 3_FAIXA 
 "4_FAIXA ""	1	1	NA"
-"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/prices/value	value	""Valor da mediana de cada faixa relativa ao serviço ofertado, informado no período, conforme Res nº 32 BCB, 2020. p.ex. '45.00'"
-"(representa um valor monetário. p.ex: 1547368.92. Este valor, considerando que a moeda seja BRL, significa R$ 1.547.368,92. O único separador presente deve ser o '.' (ponto) para indicar a casa decimal. Não deve haver separador de milhar)""	Texto	12	Obrigatório	^((\d{1,9}\.\d{2}){1}|NA)$		1	1	NA"
-"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/prices/currency	currency	Moeda referente ao valor da Tarifa, segundo modelo ISO-4217. p.ex. 'BRL' 	Texto	3	Obrigatório		moeda (ISO-4217)	1	1	NA"
-"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/prices/customers/rate	rate	""Percentual dos clientes de cada faixa relativa ao serviço ofertado, para pessoa natural informado no período, conforme Res nº32, BCB, 2020. p.ex. '0.1500'"
+"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/prices/value	value	""Valor da mediana de cada faixa relativa ao serviÃ§o ofertado, informado no perÃ­odo, conforme Res nÂº 32 BCB, 2020. p.ex. '45.00'"
+"(representa um valor monetÃ¡rio. p.ex: 1547368.92. Este valor, considerando que a moeda seja BRL, significa R$ 1.547.368,92. O Ãºnico separador presente deve ser o '.' (ponto) para indicar a casa decimal. NÃ£o deve haver separador de milhar)""	Texto	12	ObrigatÃ³rio	^((\d{1,9}\.\d{2}){1}|NA)$		1	1	NA"
+"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/prices/currency	currency	Moeda referente ao valor da Tarifa, segundo modelo ISO-4217. p.ex. 'BRL' 	Texto	3	ObrigatÃ³rio		moeda (ISO-4217)	1	1	NA"
+"openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/prices/customers/rate	rate	""Percentual dos clientes de cada faixa relativa ao serviÃ§o ofertado, para pessoa natural informado no perÃ­odo, conforme Res nÂº32, BCB, 2020. p.ex. '0.1500'"
 (representa uma porcentagem Ex: 0.15 (O valor ao lado representa 15%. O valor '1 'representa 100%)
-A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
-"(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)""	Texto	6	Obrigatório	""(^[0-9](\.[0-9]{4})$|^NA$)"
-"		1	1	A precisão da apuração pode prever até 4 casas decimais 
-openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/minimum/value	value	Valor mínimo apurado para a tarifa de serviços sobre a base de clientes no mês de referência	Texto	12	Obrigatório	^((\d{1,9}\.\d{2}){1}|NA)$		1	1	NA
-openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/minimum/currency	currency	Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217. p.ex.'BRL' 	Texto	3	Obrigatório		moeda (ISO-4217)	1	1	NA
-openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/maximum/value	value	Valor máximo apurado para a tarifa de serviços sobre a base de clientes no mês de referência	Texto	12	Obrigatório	^((\d{1,9}\.\d{2}){1}|NA)$		1	1	NA
-openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/maximum/currency	currency	Moeda referente ao valor mínimo da Tarifa, segundo modelo ISO-4217. p.ex.'BRL' 	Texto	3	Obrigatório		moeda (ISO-4217)	1	1	NA
-openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/		Lista que traz o conjunto de informações necessárias para demonstrar a distribuição de frequência das taxas de juros remuneratórios do Crédito Rotativo	Lista					1	N	
-openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/referentialRateIndexer	referentialRateIndexer	Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040, que incide sobre a utilização do crédito rotativo	Texto		Obrigatório		SEM_INDEXADOR_TAXA"
+A apuraÃ§Ã£o pode acontecer com atÃ© 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+"(representaÃ§Ã£o de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)""	Texto	6	ObrigatÃ³rio	""(^[0-9](\.[0-9]{4})$|^NA$)"
+"		1	1	A precisÃ£o da apuraÃ§Ã£o pode prever atÃ© 4 casas decimais 
+openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/minimum/value	value	Valor mÃ­nimo apurado para a tarifa de serviÃ§os sobre a base de clientes no mÃªs de referÃªncia	Texto	12	ObrigatÃ³rio	^((\d{1,9}\.\d{2}){1}|NA)$		1	1	NA
+openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/minimum/currency	currency	Moeda referente ao valor mÃ­nimo da Tarifa, segundo modelo ISO-4217. p.ex.'BRL' 	Texto	3	ObrigatÃ³rio		moeda (ISO-4217)	1	1	NA
+openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/maximum/value	value	Valor mÃ¡ximo apurado para a tarifa de serviÃ§os sobre a base de clientes no mÃªs de referÃªncia	Texto	12	ObrigatÃ³rio	^((\d{1,9}\.\d{2}){1}|NA)$		1	1	NA
+openBankingBrazil/<brand>/companies/businessCreditCards/fees/services/maximum/currency	currency	Moeda referente ao valor mÃ­nimo da Tarifa, segundo modelo ISO-4217. p.ex.'BRL' 	Texto	3	ObrigatÃ³rio		moeda (ISO-4217)	1	1	NA
+openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/		Lista que traz o conjunto de informaÃ§Ãµes necessÃ¡rias para demonstrar a distribuiÃ§Ã£o de frequÃªncia das taxas de juros remuneratÃ³rios do CrÃ©dito Rotativo	Lista					1	N	
+openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/referentialRateIndexer	referentialRateIndexer	Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040, que incide sobre a utilizaÃ§Ã£o do crÃ©dito rotativo	Texto		ObrigatÃ³rio		SEM_INDEXADOR_TAXA"
 PRE_FIXADO
 POS_FIXADO_TR_TBF
 POS_FIXADO_TJLP
@@ -111,30 +111,30 @@ CREDITO_RURAL_TCR_POS
 CREDITO_RURAL_TRFC_PRE
 CREDITO_RURAL_TRFC_POS
 "OUTROS_INDEXADORES""	1	1	"
-"openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/rate	rate	""Percentual que incide sobre a composição das taxas de juros remuneratórios pela utilização do crédito rotativo. "
+"openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/rate	rate	""Percentual que incide sobre a composiÃ§Ã£o das taxas de juros remuneratÃ³rios pela utilizaÃ§Ã£o do crÃ©dito rotativo. "
 (representa uma porcentagem Ex: 0.15 (O valor ao lado representa 15%. O valor '1 'representa 100%)
-A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
-"(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)""	Texto	4	Obrigatório	""^((\d{1,9}\.\d{2}){1}|NA)$ "
+A apuraÃ§Ã£o pode acontecer com atÃ© 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+"(representaÃ§Ã£o de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)""	Texto	4	ObrigatÃ³rio	""^((\d{1,9}\.\d{2}){1}|NA)$ "
 "		1	1	
-openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/applications/		Lista  das faixas de cobrança da taxa nominal mensal aplicada pela contratação de crédito"
+openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/applications/		Lista  das faixas de cobranÃ§a da taxa nominal mensal aplicada pela contrataÃ§Ã£o de crÃ©dito"
 "rotativo""	Lista					4	4	"
-"openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/applications/interval	interval	""Faixas para cobrança da taxa nominal mensal aplicada pela contratação do crédito rotativo, no intervalo informado: 1ª faixa, 2ª faixa, 3ª faixa e 4ª faixa. Segundo Normativa nº32 de 2020: 'Distribuição de frequência relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o § 2º do art. 3º da Circular nº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitação dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas. "
-" ""	Texto		Obrigatório		""1_FAIXA "
+"openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/applications/interval	interval	""Faixas para cobranÃ§a da taxa nominal mensal aplicada pela contrataÃ§Ã£o do crÃ©dito rotativo, no intervalo informado: 1Âª faixa, 2Âª faixa, 3Âª faixa e 4Âª faixa. Segundo Normativa nÂº32 de 2020: 'DistribuiÃ§Ã£o de frequÃªncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o Â§ 2Âº do art. 3Âº da Circular nÂº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitaÃ§Ã£o dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas. "
+" ""	Texto		ObrigatÃ³rio		""1_FAIXA "
 2_FAIXA 
 3_FAIXA
 "4_FAIXA""	1	1	NA"
-"openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/applications/indexer/rate	rate	""Percentual que corresponde a mediana (taxa nominal mensal) cobrada do cliente pela utilização do crédito rotativo, no intervalo informado. p.ex. '0,8700%'"
-A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
-"(representação de porcentagem p.ex: 0.15. Este valor representa 15%. O valor 1 representa 100%)""	Texto	6	Obrigatório	(^[0-9](\.[0-9]{4})$|^NA$)		1	1	NA"
+"openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/applications/indexer/rate	rate	""Percentual que corresponde a mediana (taxa nominal mensal) cobrada do cliente pela utilizaÃ§Ã£o do crÃ©dito rotativo, no intervalo informado. p.ex. '0,8700%'"
+A apuraÃ§Ã£o pode acontecer com atÃ© 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+"(representaÃ§Ã£o de porcentagem p.ex: 0.15. Este valor representa 15%. O valor 1 representa 100%)""	Texto	6	ObrigatÃ³rio	(^[0-9](\.[0-9]{4})$|^NA$)		1	1	NA"
 "openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/applications/customers/rate	rate	""Percentual de clientes nas faixas apurada. p.ex. '0,8700'"
-A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
-"(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)""	Texto	6	Obrigatório	(^[0-9](\.[0-9]{4})$|^NA$)		1	1	A precisão da apuração pode prever até 4 casas decimais "
-"openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/minimumRate	minimumRate	""Percentual mínimo cobrado (taxa nominal mensal ) no mês de referência, pela utilização do crédito rotativo"
-"(A apuração deve pode ser feita com até 4 casas decimais. A representação de porcentagem p.ex: do 0.1500 representa 15%. Desta forma, o valor 1 representa 100%)""	Texto	6	Obrigatório	(^[0-9](\.[0-9]{4})$|^NA$)		1	1	NA"
-"openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/maximumRate	maximumRate	""Percentual máximo cobrado (taxa nominal mensal ) no mês de referência, pela utilização do crédito rotativo"
-"(A apuração deve pode ser feita com até 4 casas decimais. A representação de porcentagem p.ex: do 0.1500 representa 15%. Desta forma, o valor 1 representa 100%)""	Texto	6	Obrigatório	(^[0-9](\.[0-9]{4})$|^NA$)		1	1	NA"
-"openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/		Lista que traz o conjunto de informações necessárias para demonstrar a distribuição de frequência das taxas de juros remuneratórios para parcelamento do saldo devedor	Lista					1	N	"
-"openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/referentialRateIndexer	referentialRateIndexer	Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040 que incide sobre o parcelamento do saldo devedor	Texto		Obrigatório		""SEM_INDEXADOR_TAXA"
+A apuraÃ§Ã£o pode acontecer com atÃ© 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+"(representaÃ§Ã£o de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)""	Texto	6	ObrigatÃ³rio	(^[0-9](\.[0-9]{4})$|^NA$)		1	1	A precisÃ£o da apuraÃ§Ã£o pode prever atÃ© 4 casas decimais "
+"openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/minimumRate	minimumRate	""Percentual mÃ­nimo cobrado (taxa nominal mensal ) no mÃªs de referÃªncia, pela utilizaÃ§Ã£o do crÃ©dito rotativo"
+"(A apuraÃ§Ã£o deve pode ser feita com atÃ© 4 casas decimais. A representaÃ§Ã£o de porcentagem p.ex: do 0.1500 representa 15%. Desta forma, o valor 1 representa 100%)""	Texto	6	ObrigatÃ³rio	(^[0-9](\.[0-9]{4})$|^NA$)		1	1	NA"
+"openBankingBrazil/<brand>/companies/businessCreditCards/interest/Rates/maximumRate	maximumRate	""Percentual mÃ¡ximo cobrado (taxa nominal mensal ) no mÃªs de referÃªncia, pela utilizaÃ§Ã£o do crÃ©dito rotativo"
+"(A apuraÃ§Ã£o deve pode ser feita com atÃ© 4 casas decimais. A representaÃ§Ã£o de porcentagem p.ex: do 0.1500 representa 15%. Desta forma, o valor 1 representa 100%)""	Texto	6	ObrigatÃ³rio	(^[0-9](\.[0-9]{4})$|^NA$)		1	1	NA"
+"openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/		Lista que traz o conjunto de informaÃ§Ãµes necessÃ¡rias para demonstrar a distribuiÃ§Ã£o de frequÃªncia das taxas de juros remuneratÃ³rios para parcelamento do saldo devedor	Lista					1	N	"
+"openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/referentialRateIndexer	referentialRateIndexer	Tipos de taxas referenciais ou indexadores, conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040 que incide sobre o parcelamento do saldo devedor	Texto		ObrigatÃ³rio		""SEM_INDEXADOR_TAXA"
 PRE_FIXADO
 POS_FIXADO_TR_TBF
 POS_FIXADO_TJLP
@@ -153,38 +153,38 @@ CREDITO_RURAL_TCR_POS
 CREDITO_RURAL_TRFC_PRE
 CREDITO_RURAL_TRFC_POS
 "OUTROS_INDEXADORES""	1	1	"
-"openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/rate	rate	""Percentual que incide sobre a composição das taxas de juros remuneratórios  sobre o parcelamento do saldo devedor"
+"openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/rate	rate	""Percentual que incide sobre a composiÃ§Ã£o das taxas de juros remuneratÃ³rios  sobre o parcelamento do saldo devedor"
 (representa uma porcentagem Ex: 0.15 (O valor ao lado representa 15%. O valor '1 'representa 100%)
-A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
-"(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)""	Texto	4	Obrigatório	""^((\d{1,9}\.\d{2}){1}|NA)$ "
+A apuraÃ§Ã£o pode acontecer com atÃ© 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+"(representaÃ§Ã£o de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)""	Texto	4	ObrigatÃ³rio	""^((\d{1,9}\.\d{2}){1}|NA)$ "
 "		1	1	
-openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/applications/		Lista distribuição percentuais relativos à taxa de juros remuneratórios	Lista					4	4	
-openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/applications/interval	interval	Faixas para cobrança da taxa nominal mensal aplicada quando há parcelamento do saldo devedor, no intervalo informado: 1ª faixa, 2ª faixa , 3ª faixa  e 4ª faixa. Segundo Normativa nº32 de 2020: 'Distribuição de frequência relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o § 2º do art. 3º da Circular nº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitação dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas. "
-"	Texto		Obrigatório		1_FAIXA "
+openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/applications/		Lista distribuiÃ§Ã£o percentuais relativos Ã  taxa de juros remuneratÃ³rios	Lista					4	4	
+openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/applications/interval	interval	Faixas para cobranÃ§a da taxa nominal mensal aplicada quando hÃ¡ parcelamento do saldo devedor, no intervalo informado: 1Âª faixa, 2Âª faixa , 3Âª faixa  e 4Âª faixa. Segundo Normativa nÂº32 de 2020: 'DistribuiÃ§Ã£o de frequÃªncia relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o Â§ 2Âº do art. 3Âº da Circular nÂº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitaÃ§Ã£o dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas. "
+"	Texto		ObrigatÃ³rio		1_FAIXA "
 2_FAIXA 
 3_FAIXA 
 "4_FAIXA ""	1	1	NA"
-"openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/applications/indexer/rate	rate	""Percentual que corresponde a mediana (taxa nominal mensal) aplicada para pagamento parcelado do saldo devedor quando não realizado pagamento integral da fatura, no período informado. p.ex. '0,2580%'."
-"(A apuração deve pode ser feita com até 4 casas decimais. A representação de porcentagem p.ex: do 0.1500 representa 15%. Desta forma, o valor 1 representa 100%)""	Texto	6	Obrigatório	(^[0-9](\.[0-9]{4})$|^NA$)		1	1	NA"
+"openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/applications/indexer/rate	rate	""Percentual que corresponde a mediana (taxa nominal mensal) aplicada para pagamento parcelado do saldo devedor quando nÃ£o realizado pagamento integral da fatura, no perÃ­odo informado. p.ex. '0,2580%'."
+"(A apuraÃ§Ã£o deve pode ser feita com atÃ© 4 casas decimais. A representaÃ§Ã£o de porcentagem p.ex: do 0.1500 representa 15%. Desta forma, o valor 1 representa 100%)""	Texto	6	ObrigatÃ³rio	(^[0-9](\.[0-9]{4})$|^NA$)		1	1	NA"
 "openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/applications/customers/rate	rate	""Percentual de clientes nas faixas apurada.  p.ex. '0,8700'"
-A apuração pode acontecer com até 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
-"(representação de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)""	Texto	6	Obrigatório	""(^[0-9](\.[0-9]{4})$|^NA$)"
-"		1	1	A precisão da apuração pode prever até 4 casas decimais 
-openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/minimumRate	minimumRate	Percentual mínimo cobrado (taxa nominal mensal) para o pagamento parcelado do saldo devedor na fatura do mês de referência."
-"(A apuração deve pode ser feita com até 4 casas decimais. A representação de porcentagem p.ex: do 0.1500 representa 15%. Desta forma, o valor 1 representa 100%)""	Texto	6	Obrigatório	""(^[0-9](\.[0-9]{4})$|^NA$)"
+A apuraÃ§Ã£o pode acontecer com atÃ© 4 casas decimais. O preenchimento deve respeitar as 4 casas decimais, mesmo que venham preenchidas com zeros
+"(representaÃ§Ã£o de porcentagem p.ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)""	Texto	6	ObrigatÃ³rio	""(^[0-9](\.[0-9]{4})$|^NA$)"
+"		1	1	A precisÃ£o da apuraÃ§Ã£o pode prever atÃ© 4 casas decimais 
+openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/minimumRate	minimumRate	Percentual mÃ­nimo cobrado (taxa nominal mensal) para o pagamento parcelado do saldo devedor na fatura do mÃªs de referÃªncia."
+"(A apuraÃ§Ã£o deve pode ser feita com atÃ© 4 casas decimais. A representaÃ§Ã£o de porcentagem p.ex: do 0.1500 representa 15%. Desta forma, o valor 1 representa 100%)""	Texto	6	ObrigatÃ³rio	""(^[0-9](\.[0-9]{4})$|^NA$)"
 "		1	1	NA
-openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/maximumRate	maximumRate	Percentual máximo cobrado (taxa nominal mensal) para o pagamento parcelado do saldo devedor na fatura do mês de referência."
-"(A apuração deve pode ser feita com até 4 casas decimais. A representação de porcentagem p.ex: do 0.1500 representa 15%. Desta forma, o valor 1 representa 100%)""	Texto	6	Obrigatório	""(^[0-9](\.[0-9]{4})$|^NA$)"
+openBankingBrazil/<brand>/companies/businessCreditCards/interest/instalmentRates/maximumRate	maximumRate	Percentual mÃ¡ximo cobrado (taxa nominal mensal) para o pagamento parcelado do saldo devedor na fatura do mÃªs de referÃªncia."
+"(A apuraÃ§Ã£o deve pode ser feita com atÃ© 4 casas decimais. A representaÃ§Ã£o de porcentagem p.ex: do 0.1500 representa 15%. Desta forma, o valor 1 representa 100%)""	Texto	6	ObrigatÃ³rio	""(^[0-9](\.[0-9]{4})$|^NA$)"
 "		1	1	NA
-openBankingBrazil/<brand>/companies/businessCreditCards/interest/otherCredits/		Lista de outras operações de crédito	Lista					1	3	
-openBankingBrazil/<brand>/companies/businessCreditCards/interest/otherCredits/code	code	Lista de outras operações de crédito. p.ex. 'SAQUE_A_CREDITO'	Texto		Obrigatório		SAQUE_A_CREDITO"
+openBankingBrazil/<brand>/companies/businessCreditCards/interest/otherCredits/		Lista de outras operaÃ§Ãµes de crÃ©dito	Lista					1	3	
+openBankingBrazil/<brand>/companies/businessCreditCards/interest/otherCredits/code	code	Lista de outras operaÃ§Ãµes de crÃ©dito. p.ex. 'SAQUE_A_CREDITO'	Texto		ObrigatÃ³rio		SAQUE_A_CREDITO"
 PAGAMENTOS_CONTAS
 "OUTROS ""	1	1	NA"
-"openBankingBrazil/<brand>/companies/businessCreditCards/interest/otherCredits/additionalInfo	additionalInfo	Campo Texto para descrever outras operações de crédito marcadas como 'OUTROS'	Texto	50	Condicional	\w*\W*		0	1	Se o campo 'code' vier selecionado com 'OUTROS' é obrigatório o preenchimento do additonalInfo"
-"openBankingBrazil/<brand>/companies/businessCreditCards/termsConditions/minimumFeeRate	minimumFeeRate	""Percentual para pagamento mínimo sobre o saldo devedor da fatura. p.ex. '0,25, que representa 25%'"
-"(representação de uma porcentagem Ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)""	Texto	4	Obrigatório	""^((\d{1,9}\.\d{2}){1}|NA)$ "
+"openBankingBrazil/<brand>/companies/businessCreditCards/interest/otherCredits/additionalInfo	additionalInfo	Campo Texto para descrever outras operaÃ§Ãµes de crÃ©dito marcadas como 'OUTROS'	Texto	50	Condicional	\w*\W*		0	1	Se o campo 'code' vier selecionado com 'OUTROS' Ã© obrigatÃ³rio o preenchimento do additonalInfo"
+"openBankingBrazil/<brand>/companies/businessCreditCards/termsConditions/minimumFeeRate	minimumFeeRate	""Percentual para pagamento mÃ­nimo sobre o saldo devedor da fatura. p.ex. '0,25, que representa 25%'"
+"(representaÃ§Ã£o de uma porcentagem Ex: 0.1500. Este valor representa 15%. O valor 1 representa 100%)""	Texto	4	ObrigatÃ³rio	""^((\d{1,9}\.\d{2}){1}|NA)$ "
 "		1	1	NA
 openBankingBrazil/<brand>/companies/businessCreditCards/termsConditions/additionalInfo	additionalInfo	Campo aberto para detalhamento de taxas de juros. 	Texto	500	Opcional	\w*\W*		0	1	NA
-openBankingBrazil/<brand>/companies/businessCreditCards/termsConditions/elegibilityCriteriaInfo	elegibilityCriteriaInfo	Informação sobre as condições e critérios de elegibilidade do emissor do cartão. Pode ser informada a URL referente ao endereço onde constam as condições informadas. p.ex. 'https://example.com/mobile-banking'	Texto	2000	Obrigatório	\w*\W*		1	1	NA
-openBankingBrazil/<brand>/companies/businessCreditCards/termsConditions/closingProcessInfo	closingProcessInfo	Descrição dos procedimentos para encerramento da conta de pagamento pós paga. Pode ser informada a URL referente ao endereço onde constam as condições informadas. p.ex. 'https://example.com/mobile-banking'	Texto	2000	Obrigatório	\w*\W*		1	1	NA
+openBankingBrazil/<brand>/companies/businessCreditCards/termsConditions/elegibilityCriteriaInfo	elegibilityCriteriaInfo	InformaÃ§Ã£o sobre as condiÃ§Ãµes e critÃ©rios de elegibilidade do emissor do cartÃ£o. Pode ser informada a URL referente ao endereÃ§o onde constam as condiÃ§Ãµes informadas. p.ex. 'https://example.com/mobile-banking'	Texto	2000	ObrigatÃ³rio	\w*\W*		1	1	NA
+openBankingBrazil/<brand>/companies/businessCreditCards/termsConditions/closingProcessInfo	closingProcessInfo	DescriÃ§Ã£o dos procedimentos para encerramento da conta de pagamento pÃ³s paga. Pode ser informada a URL referente ao endereÃ§o onde constam as condiÃ§Ãµes informadas. p.ex. 'https://example.com/mobile-banking'	Texto	2000	ObrigatÃ³rio	\w*\W*		1	1	NA
 "
