@@ -70,17 +70,17 @@ O objeto de `links` sempre irá conter o atributo `self` que irá apontar para a
 }
 ```
 
-* O objeto `errors` será um *array* de zero ou mais objetos. Os atributos deste objeto serão os descritos abaixo:
+* O objeto `errors` será um array de zero ou mais objetos. Os atributos deste objeto serão os descritos abaixo:
     - obrigatoriamente o atributo `code` contendo um código de erro específico do *endpoint*;
-    - obrigatoriamente o atributo `title` contendo um título legível deste erro específico por humanos do erro deste erro específico;
-    - obrigatoriamente o atributo `detail` contendo uma descrição legível deste erro específico por humanos;
+    - obrigatoriamente o atributo `title` contendo um título legível por humanos do erro deste erro específico;
+    - obrigatoriamente o atributo `detail` contendo uma descrição legível por humanos deste erro específico;
     - opcionalmente o objeto `meta` contendo dados adicionais sobre o *endpoint* que seja relevante para o erro.
 
 ### Convenções de nomenclatura de atributos
 
 <b>Caracteres válidos em nomes de atributos</b>
 
-Todos os nomes de objetos e atributos definidos nos objetos JSON de requisição e respostas devem ser nomeados seguindo o padrão camelCase, tendo seu nome composto apenas por letras (a-z, A-Z) e números (0-9).
+Todos os nomes de objetos e atributos definidos nos objetos JSON de requisição e resposta devem ser nomeados seguindo o padrão camelCase, tendo seu nome composto apenas por letras (a-z, A-Z) e números (0-9).
 
 Qualquer outro caractere não deve ser usado nos nomes dos objetos e atributos, com exceção do caractere `-` (hífen), que poderá ser utilizado apenas conforme descrito na seção [Extensibilidade](#introducao-extensibilidade).
 

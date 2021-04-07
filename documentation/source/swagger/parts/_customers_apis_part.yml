@@ -1,0 +1,469 @@
+﻿openapi: 3.0.0
+info:
+  title: API Customers - Open Banking Brasil
+  description: |
+    API de dados cadastrais de clientes do Open Banking Brasil – Fase 2.
+    API que retorna os dados cadastrais de clientes e de seus representantes, incluindo dados de identificação, de qualificação financeira, informações sobre representantes cadastrados e sobre o relacionamento financeiro do cliente com a instituição transmissora dos dados.\
+    Possui segregação entre pessoa natural e pessoa jurídica.
+    Requer consentimento do cliente para todos os `endpoints`.
+
+    # Permissions necessárias para a API Customers
+
+    Para cada um dos paths desta API, além dos escopos (`scopes`) indicados existem `permissions` que deverão ser observadas:
+
+    ### `/personal/identifications`
+      - permissions:
+        - GET: **CUSTOMERS_PERSONAL_IDENTIFICATIONS_READ**
+    ### `/personal/qualifications`
+      - permissions: **CUSTOMERS_PERSONAL_ADITTIONALINFO_READ**
+    ### `/personal/financial-relations`
+      - permissions:
+        - GET: **CUSTOMERS_PERSONAL_ADITTIONALINFO_READ**
+    ### `/business/identifications`
+      - permissions:
+        - GET: **CUSTOMERS_BUSINESS_IDENTIFICATIONS_READ**
+    ### `/business/qualifications`
+      - permissions:
+        - GET: **CUSTOMERS_BUSINESS_ADITTIONALINFO_READ**
+    ### `/business/financial-relations`
+      - permissions:
+        - GET: **CUSTOMERS_BUSINESS_ADITTIONALINFO_READ**
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    name: Governança do Open Banking Brasil – Interfaces
+    email: gt-interfaces@openbankingbr.org
+    url: https://openbanking-brasil.github.io/areadesenvolvedor/
+servers:
+  - url: 'https://api.banco.com.br/open-banking/customers/v1'
+    description: Servidor de Produção
+  - url: 'https://apih.banco.com.br/open-banking/customers/v1'
+    description: Servidor de Homologação
+tags:
+  - name: Customers
+    description: Operações para listagem das informações Cadastrais do Cliente
+paths:
+  /personal/identifications:
+    get:
+      tags:
+        - Customers
+      summary: Obtém os registros de identificação da pessoa natural.
+      description: Método para obter os registros de identificação da pessoa natural mantidos na instituição transmissora.
+      operationId: getCustomersPersonalIdentifications
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+      responses:
+        '200':
+          $ref: '#/components/responses/OKResponsePersonalCustomersIdentification'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/NotAcceptable'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponsePersonalCustomersIdentification'
+      security:
+        - OpenId:
+            - openId
+            - customers
+
+  /personal/qualifications:
+    get:
+      tags:
+        - Customers
+      summary: Obtém os registros de qualificação da pessoa natural.
+      description: Método para obter os registros de qualificação da pessoa natural mantidos na instituição transmissora.
+      operationId: getCustomersPersonalQualifications
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+      responses:
+        '200':
+          $ref: '#/components/responses/OKResponsePersonalCustomersQualification'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/NotAcceptable'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponsePersonalCustomersQualification'
+      security:
+        - OpenId:
+            - openId
+            - customers
+
+  /personal/financial-relations:
+    get:
+      tags:
+        - Customers
+      summary: Obtém os registros de relacionamentos com a instituição financeira e de representantes da pessoa natural.
+      description: Método para obter registros de relacionamentos com a instituição financeira e de representantes da pessoa natural mantidos na instituição transmissora.
+      operationId: getCustomersPersonalRelationships
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+      responses:
+        '200':
+          $ref: '#/components/responses/OKResponsePersonalCustomersFinancialRelation'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/NotAcceptable'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponsePersonalCustomersFinancialRelation'
+      security:
+        - OpenId:
+            - openId
+            - customers
+
+  /business/identifications:
+    get:
+      tags:
+        - Customers
+      summary: Obtém os registros de identificação da pessoa jurídica.
+      description: Método para obter os registros de identificação da pessoa jurídica mantidos na instituição transmissora
+
+      operationId: getCustomersBusinessIdentifications
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+      responses:
+        '200':
+          $ref: '#/components/responses/OKResponseBusinessCustomersIdentification'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/NotAcceptable'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseBusinessCustomersIdentification'
+      security:
+        - OpenId:
+            - openId
+            - customers
+
+  /business/qualifications:
+    get:
+      tags:
+        - Customers
+      summary: Obtém os registros de qualificação da pessoa jurídica.
+      description: Método para obter os registros de qualificação da pessoa jurídica mantidos na instituição transmissora.
+      operationId: getCustomersBusinessQualifications
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+      responses:
+        '200':
+          $ref: '#/components/responses/OKResponseBusinessCustomersQualification'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/NotAcceptable'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseBusinessCustomersQualification'
+      security:
+        - OpenId:
+            - openId
+            - customers
+
+  /business/financial-relations:
+    get:
+      tags:
+        - Customers
+      summary: Obtém os registros de relacionamentos com a instituição financeira e de representantes da pessoa jurídica.
+      description: Método para obter registros de relacionamentos com a instituição financeira e de representantes da pessoa jurídica mantidos na instituição transmissora.
+      operationId: getCustomersBusinessRelationships
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+      responses:
+        '200':
+          $ref: '#/components/responses/OKResponseBusinessCustomersFinancialRelation'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/NotAcceptable'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseBusinessCustomersFinancialRelation'
+      security:
+        - OpenId:
+            - openId
+            - customers
+
+components:
+  schemas:
+    BusinessFinancialRelationData:
+      $ref: ./schemas/customers_apis/BusinessFinancialRelationData.yaml
+    BusinessIdentificationData:
+      $ref: ./schemas/customers_apis/BusinessIdentificationData.yaml
+    BusinessProcurator:
+      $ref: ./schemas/customers_apis/BusinessProcurator.yaml
+    BusinessQualificationData:
+      $ref: ./schemas/customers_apis/BusinessQualificationData.yaml
+    BusinessOtherDocument:
+      $ref: ./schemas/customers_apis/BusinessOtherDocument.yaml
+    CustomerContacts:
+      $ref: ./schemas/customers_apis/CustomerContacts.yaml
+    CustomerEmail:
+      $ref: ./schemas/customers_apis/CustomerEmail.yaml
+    CustomerPhone:
+      $ref: ./schemas/customers_apis/CustomerPhone.yaml
+    CustomerPostalAddress:
+      $ref: ./schemas/customers_apis/CustomerPostalAddress.yaml
+    EconomicActivity:
+      $ref: ./schemas/customers_apis/EconomicActivity.yaml
+    EnumAreaCode:
+      $ref: ./schemas/enum/EnumAreaCode.yaml
+    EnumCountrySubDivision:
+      $ref: ./schemas/enum/EnumCountrySubDivision.yaml
+    EnumCustomerPhoneType:
+      $ref: ./schemas/enum/EnumCustomerPhoneType.yaml
+    EnumFiliationType:
+      $ref: ./schemas/enum/EnumFiliationType.yaml
+    EnumInformedRevenueFrequency:
+      $ref: ./schemas/enum/EnumInformedRevenueFrequency.yaml
+    EnumInformedIncomeFrequency:
+      $ref: ./schemas/enum/EnumInformedIncomeFrequency.yaml
+    EnumMaritalStatusCode:
+      $ref: ./schemas/enum/EnumMaritalStatusCode.yaml
+    EnumOccupationMainCodeType:
+      $ref: ./schemas/enum/EnumOccupationMainCodeType.yaml
+    EnumPartiesParticipationDocumentType:
+      $ref: ./schemas/enum/EnumPartiesParticipationDocumentType.yaml
+    EnumPersonalOtherDocumentType:
+      $ref: ./schemas/enum/EnumPersonalOtherDocumentType.yaml
+    EnumProcuratorsType:
+      $ref: ./schemas/enum/EnumProcuratorsType.yaml
+    EnumProcuratorsTypePersonal:
+      $ref: ./schemas/enum/EnumProcuratorsTypePersonal.yaml
+    EnumProductServiceType:
+      $ref: ./schemas/enum/EnumProductServiceType.yaml
+    EnumSex:
+      $ref: ./schemas/enum/EnumSex.yaml
+    GeographicCoordinates:
+      $ref: ./schemas/GeographicCoordinates.yaml
+    Links:
+      $ref: ./schemas/Links.yaml
+    Meta:
+      $ref: ./schemas/Meta.yaml
+    Nationality:
+      $ref: ./schemas/customers_apis/Nationality.yaml
+    NationalityOther:
+      $ref: ./schemas/customers_apis/NationalityOther.yaml
+    NationalityOtherDocument:
+      $ref: ./schemas/customers_apis/NationalityOtherDocument.yaml
+    PartiesParticipation:
+      $ref: ./schemas/customers_apis/PartiesParticipation.yaml
+    PersonalDocument:
+      $ref: ./schemas/customers_apis/PersonalDocument.yaml
+    PersonalFinancialRelationData:
+      $ref: ./schemas/customers_apis/PersonalFinancialRelationData.yaml
+    PersonalIdentificationData:
+      $ref: ./schemas/customers_apis/PersonalIdentificationData.yaml
+    PersonalOtherDocument:
+      $ref: ./schemas/customers_apis/PersonalOtherDocument.yaml
+    PersonalProcurator:
+      $ref: ./schemas/customers_apis/PersonalProcurator.yaml
+    PersonalQualificationData:
+      $ref: ./schemas/customers_apis/PersonalQualificationData.yaml
+    ResponseBusinessCustomersFinancialRelation:
+      $ref: ./schemas/customers_apis/ResponseBusinessCustomersFinancialRelation.yaml
+    ResponseBusinessCustomersIdentification:
+      $ref: ./schemas/customers_apis/ResponseBusinessCustomersIdentification.yaml
+    ResponseBusinessCustomersQualification:
+      $ref: ./schemas/customers_apis/ResponseBusinessCustomersQualification.yaml
+    ResponseError:
+      $ref: ./schemas/ResponseError.yaml
+    ResponsePersonalCustomersFinancialRelation:
+      $ref: ./schemas/customers_apis/ResponsePersonalCustomersFinancialRelation.yaml
+    ResponsePersonalCustomersIdentification:
+      $ref: ./schemas/customers_apis/ResponsePersonalCustomersIdentification.yaml
+    ResponsePersonalCustomersQualification:
+      $ref: ./schemas/customers_apis/ResponsePersonalCustomersQualification.yaml
+  parameters:
+    Authorization:
+      $ref: ./parameters/Authorization.yaml
+    page:
+      $ref: ./parameters/Page.yaml
+    pageSize:
+      $ref: ./parameters/PageSize.yaml
+    xCustomerUserAgent:
+      $ref: ./parameters/XCustomerUserAgent.yaml
+    xFapiAuthDate:
+      $ref: ./parameters/XFapiAuthDate.yaml
+    xFapiCustomerIpAddress:
+      $ref: ./parameters/XFapiCustomerIpAddress.yaml
+    xFapiInteractionId:
+      $ref: ./parameters/XFapiInteractionId.yaml
+  securitySchemes:
+    OpenId:
+      type: openIdConnect
+      openIdConnectUrl: 'https://authserver.example/.well-known/openid-configuration'
+  responses:
+    OKResponsePersonalCustomersIdentification:
+      description: Dados sobre identificação pessoa física.
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: ./headers/XFapiInteractionId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponsePersonalCustomersIdentification'
+    OKResponsePersonalCustomersQualification:
+      description: Dados sobre qualificação da pessoa física
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: ./headers/XFapiInteractionId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponsePersonalCustomersQualification'
+    OKResponsePersonalCustomersFinancialRelation:
+      description: Dados sobre relacionamento da pessoa física
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: ./headers/XFapiInteractionId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponsePersonalCustomersFinancialRelation'
+    OKResponseBusinessCustomersIdentification:
+      description: Dados sobre identificação pessoa jurídica
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: ./headers/XFapiInteractionId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseBusinessCustomersIdentification'
+    OKResponseBusinessCustomersQualification:
+      description: Dados sobre qualificação pessoa jurídica
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: ./headers/XFapiInteractionId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseBusinessCustomersQualification'
+    OKResponseBusinessCustomersFinancialRelation:
+      description: Dados sobre relacionamento pessoa jurídica
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: ./headers/XFapiInteractionId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseBusinessCustomersFinancialRelation'
+    BadRequest:
+      $ref: ./responses/BadRequest.yaml
+    Forbidden:
+      $ref: ./responses/Forbidden.yaml
+    InternalServerError:
+      $ref: ./responses/InternalServerError.yaml
+    MethodNotAllowed:
+      $ref: ./responses/MethodNotAllowed.yaml
+    NotAcceptable:
+      $ref: ./responses/NotAcceptable.yaml
+    NotFound:
+      $ref: ./responses/NotFound.yaml
+    TooManyRequests:
+      $ref: ./responses/TooManyRequests.yaml
+    Unauthorized:
+      $ref: ./responses/Unauthorized.yaml
+

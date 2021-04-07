@@ -41,16 +41,6 @@ under the License.
     <% else %>
       <%= javascript_include_tag  "all_nosearch" %>
     <% end %>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7X2F7FEJY3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-7X2F7FEJY3');
-    </script>
   </head>
 
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
@@ -62,7 +52,7 @@ under the License.
     </a>
     <div class="toc-wrapper">
       <%= image_tag "logo.png", class: 'logo' %>
-      <small style="padding: 23px; color: white">Versão: v1.0.0-rc5.3</small>
+      <small style="padding: 23px; color: white">Versão: v1.0.0-rc6.0</small>
       <% if language_tabs.any? %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
